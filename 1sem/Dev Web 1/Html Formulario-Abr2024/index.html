@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+</head>
+<body>
+
+    <h1>Formulário de Cadastro</h1>
+    <hr>
+
+    <form action="https://ifrs.edu.br/cadastro.php" method="get" target="_blank">
+
+        <label for="nome">Nome Completo*:</label>                                            <br>       
+        <input type="text" name="nome" id="nome" placeholder="Informe seu nome" required>    <br>
+
+        <label for="email">Email*:</label>                                                   <br>
+        <input type="email" name="email" id="email" placeholder="Email" required>            <br>
+
+        <label for="telefone">Telefone*:</label>                                             <br>
+        <input type="text" name="tel" id="tel" placeholder="Telefone" required>              <br>
+
+        <label for="tCon">Tempo de contrato em meses*:</label>                               <br>
+        <input type="tCon" name="tCon" id="tCon" required>                                   <br><br>
+
+        <label for="dataN">Data de Nascimento*:</label>                                      <br>
+        <input type="date" name="dataN" id="dataN">                                          <br>
+
+        <fieldset style="border: none;">
+            <legend>Sexo:</legend>
+          
+            <input type="radio" name="sexo" id="masc" value="M">
+            <label for="masc">Masculino</label>
+          
+            <input type="radio" name="sexo" id="fem" value="F">
+            <label for="fem">Feminino</label>
+        </fieldset>
+
+        <fieldset style="border: none;">
+            <legend>Interesses</legend>
+            
+            <input type="checkbox" name="musica" id="musica" value="mus">
+            <label for="musica">Música</label>
+
+            <input type="checkbox" name="esportes" id="esportes" value="esp">
+            <label for="esportes">Esportes</label>
+
+            <input type="checkbox" name="jogos" id="jogos" value="jogos">
+            <label for="jogos">Videogame</label>
+        </fieldset>
+
+        <label for="estado">Estado</label>                                                 
+        <select name="estado" id="estado">
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="PR">Parana</option>
+            <option value="SP">Sao Paulo</option>
+            <option value="RJ">Rio de Janeiro</option>                  
+        </select>  
+        <br><br>                                                        
+        
+        <label for="obs">Considerações Adicionais:</label>                                   <br>
+        <textarea name="obs" id="obs" rows="1" cols="50" placeholder="Mensagem"></textarea>  <br><br>   
+        
+        <input type="submit" value="Enviar" name="salvar">
+        <input type="reset" value="Limpar" name="limpar">
+
+    </form>
+    <hr>
+    
+</body>
+</html>
