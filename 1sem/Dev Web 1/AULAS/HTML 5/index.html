@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Parte 5</title>
+</head>
+<body>
+
+    <h1>Pesquisa videos YouTube</h1>
+
+    <form action="https://www.youtube.com/results" method="get" target="_blank">
+        <label for="texto">Sua Pesquisa: </label>                                    <br>
+        <input type="text" name="search_query" id="texto">                                  
+
+        <input type="submit" value="Pesquisar">
+
+    </form>
+
+    <br><br><br>
+    <h1>Mensagem WhatsWeb</h1>
+    
+    <form action="https://web.whatsapp.com/send" method="get" target="_blank">
+        <label for="numero">Digite o número do contato: </label>
+        <input type="text" name="phone" id="numero">                           <br><br>
+        
+        <label for="mensagem">Digite a mensagem: </label>                      <br> 
+        <textarea name="text" id="msg" rows="5" cols="50"></textarea>      <br>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+    
+</body>
+</html>

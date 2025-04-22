@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>HTML FORMS - 03/04/2025</title>
+</head>
+
+<body>
+    <a href="https://moodle.erechim.ifrs.edu.br/pluginfile.php/167490/mod_resource/content/0/HTML%20Parte%204%20-%20forms.pdf" target="_blank">
+        <h1>Formularios HTML - Aula 4</h1>
+    </a>
+    <hr>
+    <br>
+    
+    <!--  --------------------------------------------------------------------------------------------------------------------------------  -->
+
+    <form action="https://ifrs.edu.br/cadastro.php" method="get" target="_blank">
+        
+        <label for="nm">Informe seu nome</label>                                 <br>
+        <input type="text" name="n" id="nm" required>                            <br>
+
+        <label for="email">Informe seu email</label>                             <br>
+        <input type="email" name="email" id="email">                             <br>
+
+        <label for="senha">Informe sua senha</label>                             <br>
+        <input type="password" name="pwd" id="pwd">                              <br><br>
+        
+        <label for="end">Informe o endereco</label>                              <br>
+        <input type="text" name="endereco" id="end">                             <br>
+
+        <label for="idade">Informe sua idade</label>                             <br>
+        <input type="number" name="idade" id="idade">                            <br><br>
+
+        <label for="datetime">Data de nascimento</label>                         <br>
+        <input type="date" name="dtn" id="dtn">                                  <br><br>
+
+        <label for="foto">Foto</label>                                           <br>
+        <input type="file" name="foto" id="foto">                                <br><br>
+
+    
+        <fieldset>
+            <legend>TURNO</legend>
+
+            <input type="radio" name="turno" id="manha" value="M">
+            <label for="manha">Manha</label>                                     <br>
+
+            <input type="radio" name="turno" id="tarde" value="T"> 
+            <label for="tarde">Tarde</label>                                     <br>
+
+            <input type="radio" name="turno" id="noite" value="N"> 
+            <label for="noite">Noite</label>                                     <br>
+            <!--   name eh igual, trabalham em conjunto-->
+        </fieldset>                                                              <br>
+
+        <input type="checkbox" name="msg" id="msg" value="S" checked>
+        <label for="msg">Receber mensagens por email</label>                     <br><br>   
+        
+        <label for="estado">Estado</label>
+        <select name="estado" id="estado">
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="PR">Parana</option>
+            <option value="SP">Sao Paulo</option>
+            <option value="RJ">Rio de Janeiro</option>                  
+        </select>                                                                <br><br>
+
+        <label for="obs">Observacao</label>
+        <textarea name="obs" id="obs" rows="1" cols="50"></textarea>             <br><br>
+
+        
+        <input type="submit" value="Enviar" name="salvar">
+        <input type="reset" value="Limpar" name="Limpar">
+
+    </form>
+
+    <br>
+    <hr>
+
+    <!-- ------------------------------------------------------------------------------------------------------- -->
+
+    <h1 id="t1">Pesquisa Google</h1>
+
+    <form action="https://www.google.com/search" method="get" target="_blank">
+
+        <input type="text" name="q" id="i1" placeholder="Digite sua pesquisa aqui">              
+        <button id="b1" type="submit" value="pesquisar" name="p">Pesquisar no google</button> <br><br>
+
+        <fieldset id="tipo">
+            <legend>TIPO DE PESQUISA</legend>
+
+            <input type="radio" name="udm" id="todas" value="1">
+            <label for="todas">Todas</label>                                 <br>
+
+            <input type="radio" name="udm" id="imagens" value="2">
+            <label for="imagens">Imagens</label>                             <br>
+
+            <input type="radio" name="udm" id="video" value="7">
+            <label for="video">Video</label>                                 <br>
+        </fieldset>                                                          <br>                                        
+
+    </form>
+
+   
+    
+</body>
+</html>

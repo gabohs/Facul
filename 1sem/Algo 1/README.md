@@ -1,0 +1,1 @@
+# Aulas e Trabalhos realizados na disciplina de [Algoritimos](https://moodle.erechim.ifrs.edu.br/course/view.php?id=4928) 
