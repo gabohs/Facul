@@ -24,5 +24,4 @@ public class Exercicio20
             System.out.println(ano + " nao eh bissexto");
         }
     }
-    
 }
