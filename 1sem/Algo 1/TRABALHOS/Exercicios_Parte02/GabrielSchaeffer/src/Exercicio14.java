@@ -27,6 +27,5 @@ public class Exercicio14
         double altPredio = ( Math.sin(angulo) * hipotenusa ) + altTeodolito;
         
         System.out.println("A altura do predio eh " + altPredio);
-    }
-    
+    }   
 }

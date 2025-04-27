@@ -31,5 +31,4 @@ public class Exercicio15
                 "Voce precisara de " + latasNecessarias + " latas e gastara " + gastoTotal + " reais"
         );  
     }
-    
 }

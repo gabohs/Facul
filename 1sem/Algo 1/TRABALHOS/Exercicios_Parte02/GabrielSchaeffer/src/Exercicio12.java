@@ -27,6 +27,5 @@ public class Exercicio12
         );
         
         System.out.println("A extensao da tirolesa eh " + extTirolesa + "m");
-    }
-    
+    } 
 }

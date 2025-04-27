@@ -25,5 +25,4 @@ public class Exercicio13
         
         System.out.println("A largura do rio e " + larguraRio + "m");
     }
-    
 }

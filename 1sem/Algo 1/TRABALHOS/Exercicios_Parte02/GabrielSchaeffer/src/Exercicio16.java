@@ -8,8 +8,7 @@ retribuições para si mesmo. A única condição é que, no dia seguinte, cada 
 auxiliar outras N pessoas e “repassar a corrente”. Ele observará o experimento por 10 dias na
 sua cidade, sendo que o dia 1 é o dia em que ele auxilia as N primeiras pessoas. Escreva um
 algoritmo para calcular o total de pessoas auxiliadas, caso o N seja 2, 3 ou 4.
- */
-
+*/
 
 public class Exercicio16 
 {
@@ -18,7 +17,7 @@ public class Exercicio16
         Scanner leitor = new Scanner(System.in);
         final int totalDias = 10;
         
-        System.out.println("Numero de pessoas ajudadas: ");
+        System.out.println("Numero de pessoas ajudadas inicialmente: ");
         int pessoas = leitor.nextInt();
         
         if (pessoas > 1 && pessoas < 5)
@@ -31,5 +30,4 @@ public class Exercicio16
             System.out.println("N deve ser 2, 3 ou 4");
         }   
     }
-    
 }
