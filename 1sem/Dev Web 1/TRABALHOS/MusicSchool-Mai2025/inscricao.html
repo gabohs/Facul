@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição na Music School</title>
+</head>
+<body>
+    <table cellpadding="10" cellspacing="20" id="menu">
+        <tr>
+            <td>
+                <img src="img/logo.avif" alt="Music School Logo" width="100" height="80">
+            </td>
+
+            <td>
+                <a href="index.html">Início</a>
+            </td>
+
+            <td>
+                <a href="inscricao.html">Inscrição</a>
+            </td>
+
+            <td>
+                <a href="horarios.html">Horários</a>
+            </td>
+
+            <td>
+                <a href="contato.html">Contato</a>
+            </td>
+        </tr>
+    </table>
+
+    <h1>Formulário de Inscrição</h1>
+
+    <form action="https://escola.ifrs.edu/cadastro.php" method="get">
+
+        <label for="nome">Nome completo:</label>                                            <br>
+        <input type="text" name="nome" id="nome" placeholder="Seu nome" required>           <br><br>
+
+        <label for="email">Email:</label>                                                   <br>
+        <input type="email" name="email" id="email" placeholder="Seu email" required>       <br><br>
+
+        <label for="data">Data de Nascimento</label>                                        <br>
+        <input type="date" name="data" id="data" required>                                  <br><br> 
+
+        <label for="curso">Curso Desejado:</label>                                          <br>
+        <select name="curso" id="curso">
+            <option value="violao">Violão</option>
+            <option value="piano">Piano</option>
+            <option value="violao">Bateria</option>
+        </select>                                                                           <br><br>
+
+        <fieldset>
+            <legend>Horário Preferido</legend>
+
+            <input type="radio" name="horario" id="M" value="M" required>
+            <label for="M">Manhã</label>
+
+            <input type="radio" name="horario" id="T" value="T" required>
+            <label for="T">Tarde</label>
+
+            <input type="radio" name="horario" id="N" value="N" required>
+            <label for="N">Noite</label>
+        </fieldset>                                                                         <br>
+        
+        <input type="submit" value="Enviar" name="Enviar">
+        <input type="reset" value="Limpar" name="Limpar">
+ 
+
+        
+    </form>
+    
+</body>
+</html>
