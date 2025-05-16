@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;  
+}
+
+:root {
+    /* danielzao insights */
+    --myred: rgba(255, 0, 0, 1); 
+    --myblue: rgba(0, 0, 255, 1)
+}
+
+/*  MENU */
+.logo {
+    
+}
+
+li {
+    display: inline;
+    font-weight: bold;
+
+    padding: 30px;
+}
+
+h1 {
+    color: var(--myred);
+    background-color: black;
+
+    margin: auto;
+    width: fit-content;
+
+    padding: 10px;
+
+    border: 5px solid var(--myred);
+
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    text-align: center;
+
+    box-shadow: 0 0 5px var(--myblue);
+}
+
+p {
+    color: white;
+    background-color: blueviolet;
+
+    padding: 30px;
+
+    margin: auto;
+    margin-top: 20px;
+
+    width: fit-content;
+}
+
+#prova {
+    color: red;
+    background-color: black;
+}
+
+.box1 {
+    width: 150px;
+    height: 150px;
+
+    border: 15px solid green;
+    background-color: lightblue;
+
+    padding: 50px;
+    margin: 20px;
+    box-sizing:border-box;
+}
+
+.box2 {
+    width: 500px;
+    height: 100px;
+
+    border: 20px dashed var(--myblue);
+    background-color: var(--myred);
+
+    margin: 20px;
+    padding: 100px;
+}
+

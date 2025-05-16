@@ -1,0 +1,48 @@
+body {
+    background-color: lightblue;
+}
+
+a {
+    font-size: 25px;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+/* TITLEBAR */
+
+.titlebar {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.title_notebooks {
+    color: gray;
+    margin-top: -5px;
+}
+
+/* PRODUTOS */
+
+.titlep1, .titlep2 {
+    background-color: coral;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.products {
+    margin-top: -20px;
+}
+
+.prod1 {
+   background-color: white;
+}
+
+.prod2 {
+    background-color: white;
+}
