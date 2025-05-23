@@ -1,0 +1,43 @@
+.menu li {
+    display: inline-block;
+    list-style-type: none;
+
+    margin: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+.body label {
+    display: block;
+}
+
+.body input {
+    display: block;
+}
+
+.produto {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 2px solid aquamarine;
+    border-radius: 5px;
+    margin-bottom: 5px;
+
+    background-color: rgb(255, 251, 246);
+}
+
+.produto img {
+    width: 200px;
+    height: 200px;
+}
+
+.login {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
