@@ -17,9 +17,9 @@ public class Exercicio01
             vetor[i] = leitor.nextDouble();
         }
         
-        for (int i = 0; i < vetor.length; i++)
+        for (double elemento : vetor)
         {
-            System.out.println( ( vetor[i] * vetor[i] ) + " " + ( vetor[i] * vetor[i] * vetor[i] ) );
+            System.out.println( ( elemento * elemento ) + " " + ( elemento * elemento * elemento ) );
         }
     }
     

@@ -11,26 +11,44 @@ public class Exercicio03
     {
         Scanner leitor = new Scanner(System.in);
         
-        int[] nums1 = new int[10];
+        int[] nums = new int[10];
         
-        for (int i = 0; i < nums1.length; i++)
+        for (int i = 0; i < nums.length; i++)
         {
-            nums1[i] = leitor.nextInt();
+            nums[i] = leitor.nextInt();
         }
         
         System.out.println("Digite um numero: ");
-        int num = leitor.nextInt();
-        int ocorrencias = 0;
-        
-        for(int i = 0; i < nums1.length; i++)
+        int n = leitor.nextInt();
+
+        int i;
+        for (i = 0; i < nums.length; i++)
         {
-            if (num == nums1[i])
-            {
-                ocorrencias++;
-            }
+            if (n == nums[i])
+                break;
         }
         
-        System.out.printf("O numero %d aparece %d vezes no array", num, ocorrencias);
+        if (i < nums.length)
+        {
+            System.out.printf("Numero %d encontrado no indice %d", n, i);
+        }
+        else 
+        {
+            System.out.println("Elemento nao encontrado no array");
+        }
+        
+
+
+//        int ocorrencias = 0;
+//        
+//        for(int i = 0; i < nums.length; i++)
+//        {
+//            if (n == nums[i])
+//            {
+//                ocorrencias++;
+//            }
+//        }
+//        
+//        System.out.printf("O numero %d aparece %d vezes no array", n, ocorrencias);
     }
-    
 }
