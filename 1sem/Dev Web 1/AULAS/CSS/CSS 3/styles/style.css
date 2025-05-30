@@ -1,0 +1,164 @@
+/* 
+div p {
+    background-color: yellow;
+}
+
+div p:hover {
+    background-color: red;
+}
+
+div > p:hover {     
+    background-color: green;
+}
+
+div + p:hover {
+    background-color: aqua;
+}
+
+div ~ p {
+    background-color: blueviolet;
+}
+
+h5::selection {
+    background-color: rgb(85, 3, 3);
+}
+
+a:visited {
+    color: rgb(102, 137, 6);
+}
+
+*/
+
+/* -=-=-=-=-=-=- FORM -=-=-=-=-=-=- */
+
+/*
+
+ form > div {
+    margin-bottom: 1em;
+}
+
+input {
+    border-radius: 20px;
+    margin: 10px;  
+}
+
+input[type="text"]:focus {
+    background-color: aqua;
+}
+
+input:focus {
+    border-radius: 5px;
+    background-color: aliceblue;
+}
+
+input:invalid {
+    background-color: red;
+}
+
+input:valid {
+    background-color: greenyellow;
+} 
+
+*/
+
+/* -=-=-=-=-=-=- TABELA -=-=-=-=-=-=- */
+
+/*
+
+ table {
+    padding: 10px;
+    border: 3px solid rgb(5, 255, 5);
+    border-radius: 10px;
+    border-collapse: separate;
+}
+
+table:hover {
+    border-color: rgb(35, 193, 35);
+    padding: 15px;
+}
+
+td, th {
+    margin: 10px;
+    padding: 10px;
+}
+
+thead {
+    background-color: green;
+}
+
+tr:nth-child(even) {
+    background-color: gray;
+} 
+
+*/
+
+
+/* -=-=-=-=-=-=- PT 2 (COMENTAR ACIMA) -=-=-=-=-=-=- */
+
+label, input {
+    display: block;
+}
+
+input {
+    width: 30%;
+    height: 30px;
+    margin: 10px;
+}
+
+input[type="text"] {
+    background-position: 10px;
+    background-size: 150px;
+    background-image: url("../img/lebron.jpg");
+}
+
+input[type="number"] {
+    background-image: url("../img/calendario.webp");
+    background-position: 10px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+
+    padding-left: 40px;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid brown;
+    border-radius: 5px;
+}
+
+input:invalid {
+    border: 2px solid red
+}
+
+input:valid {
+    border: 2px solid rgb(69, 115, 0)
+}
+
+input[type="submit"] {
+    background-color: green;
+    color: white;
+}
+
+input[type="reset"] {
+    background-color: red;
+    color: white;
+}
+
+table, th, td {
+    border: 1px solid;
+    padding: 10px;
+}
+
+table {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.tabela {
+    overflow-x: auto;
+}
+
+.alt {
+    color:red;
+    font-size: 40px;
+}

@@ -1,0 +1,33 @@
+.titlebar {
+    display: flex;
+    background-color: rgb(179, 179, 179);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.titlebar li {
+    display: inline-block;
+    list-style-type: none;
+
+    margin: 10px;   
+}
+
+.titlebar a {
+    color: orange;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    border-radius: 15px;
+    border: 3px solid #06c5bb;
+
+    padding: 8px;
+
+    text-decoration: none; 
+    color: inherit;     
+}
+
+.titlebar a:hover {
+    border: 3px solid #046964;
+    background-color: #06c5bb;
+}

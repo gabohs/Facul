@@ -3,51 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>CSS aula 3 - 22/05/2025</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- fonts.google.com/icons -->
+    <title>CSS Aula 3</title>
 </head>
 <body>
 
-    <div class="menu" id="menu"> 
-        <nav>
-            <ul>
-                <li> <a href="index.html">Inicio</a> </li>
-                <li> <a href="">Pedidos</a> </li>
-                <li> <a href="">Promocoes</a> </li>
-                <li> <a href="">Suporte</a> </li>
-            </ul>
-        </nav>
+    <nav class="titlebar">
+        <ul> 
+            <li>
+                <a href="aulapdf.html">PDF da aula</a>
+            </li> 
+        </ul>
+    </nav>
+
+    <div>
+        <p>Paragraph 1 in the div.</p>
+        <p>Paragraph 2 in the div.</p>
+        <section>
+            <p>Paragraph 3 in the div.</p>
+        </section>
     </div>
 
-    <div class="body">
+    <p>Paragraph 4. Not in a div.</p>
+    <p>Paragraph 5. Not in a div.</p>
+    <p>Paragraph 6. Not in a div.</p>
 
-        <div class="produto">
-            <img src="img/celular.png" alt="Celular">
-            <img src="img/celular.png" alt="Celular">
-            <img src="img/celular.png" alt="Celular">
+    <h5>Me selecione!</h5>
+
+    <a href="https://ifrs.edu.br" target="_blank">IFRS</a>
+
+    <hr>
+
+    <form action="cadastro.php" method="get">
+
+        <div class="name">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome">
+        </div>
+        
+        <div class="idade">
+            <label for="idade">Idade</label>
+            <input type="number" name="idade" id="idade" min="0" max="100" required>
         </div>
 
-        <div class="produto">
-            <img src="img/celular.png" alt="Celular">
-            <img src="img/celular.png" alt="Celular">
-            <img src="img/celular.png" alt="Celular">
+        <div class="submit">
+            <input type="submit" name="enviar" id="enviar">
+            <input type="reset" name="reset" id="reset">
         </div>
-        	
-        <!--
-        <div class="login">
-            <form action="teste.php" method="get">
-                <label for="usu">Usuario:</label>
-                <input type="text" name="usu" id="usu" placeholder="Usuario">                 
+        
+    </form>
 
-                <label for="senha">Senha:</label>
-                <input type="password" name="senha" id="senha" placeholder="Senha">           
+    <hr>
 
-                <input type="submit" value="Login">
+    <div class="tabela">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Curso</th>
+                </tr>
+            </thead>
+                
+            <tbody>
+                <tr>
+                    <td>Andre</td>
+                    <td>ADS</td>
+                </tr>
 
-            </form>
-        </div>
-        -->
+                <tr>
+                    <td>Emanuel</td>
+                    <td>ADS</td>
+                </tr>
 
+                <tr>
+                    <td>Gabriel</td>
+                    <td>ADS</td>
+                </tr>
+
+                <tr>
+                    <td>Daniel</td>
+                    <td>ADS</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="icones">
+        <span class="material-icons alt">add_shopping_cart</span>
+        <span class="material-icons alt">home</span>
     </div>
     
 </body>
