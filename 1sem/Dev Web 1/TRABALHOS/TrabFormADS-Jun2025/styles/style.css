@@ -1,0 +1,129 @@
+body {
+    background-color: var(--win-bg);
+    background: linear-gradient(to bottom right, #f5f4f1,#d5c4a1,#bdae93,#926f3d);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+}
+
+.login {
+    width: 430px;
+    height: 370px;
+
+    background-color: var(--bg1);
+    border-radius: 20px;
+    box-shadow: 0px 1px 75px 16px rgba(94, 81, 81, 0.75); /* https://cssgenerator.org/box-shadow-css-generator.html */
+
+    padding: 20px;
+}
+
+.headerImg {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.headerImg img {
+    width: 400px;
+    height: 100px;
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+
+.email, .senha, .loginBtn, .resetBtn {
+    padding: 5px 20px;
+}
+
+.email label {
+    display: block;
+
+    font-size: large;
+}
+
+.email input {
+    display: block;
+
+    border-radius: 8px;
+    border: 2px solid white;
+
+    width: 100%;
+    height: 30px;
+
+    margin: 0 auto;
+    box-sizing: border-box;
+
+}
+
+/* --------- */
+
+.senha label {
+    display: block;
+}
+
+.senha label {
+    display: block;
+
+    font-size: large;
+}
+
+.senha input {
+    display: block;
+    border-radius: 8px;
+    border: 2px solid white;
+
+    width: 100%;
+    height: 30px;
+
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.email input:focus, .email input:hover, .senha input:focus, .senha input:focus {    
+    outline: 2px solid var(--light-blue);
+}
+
+/* --------- */
+
+.loginBtn input {
+    display: block;
+
+    width: 100%;
+    height: 30px;
+
+    border: none;
+    border-radius: 8px;
+    background-color: var(--green);
+
+    margin: 0 auto;
+}
+
+.loginBtn input:hover {
+    background-color: rgb(122, 117, 15);
+}
+
+.resetBtn input {
+    display: block;
+
+    width: 100%;
+    height: 30px;
+
+    border: none;
+    border-radius: 8px;
+    background-color: var(--bright-red);
+
+    margin: 0 auto;
+}
+
+.resetBtn input:hover {
+    background-color: var(--red);
+}
+
+/* --------- */
+
+.help {
+    text-align: center;
+}
+

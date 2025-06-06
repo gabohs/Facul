@@ -1,3 +1,27 @@
+html, body {
+    height: 100vh;
+}
+
+body {
+    background-image: url("../img/sunshine.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 1000px 1000px;
+
+}
+
+.gradiente {
+    background: linear-gradient(to right, #c33764, #1d2671);
+    width: fit-content;
+    background-clip: text;
+    color: transparent;
+}
+
+.gradiente h1 {
+    font-family: cursive;   
+}
+
 /* 
 div p {
     background-color: yellow;
@@ -161,4 +185,12 @@ table {
 .alt {
     color:red;
     font-size: 40px;
+}
+
+.texto1 {
+    font-size: 20px;
+}
+
+.linha1 {
+    font-size: 2em; /* em -> tamanho em relacao ao pai; rem -> tam. em relacao a root*/
 }

@@ -1,4 +1,5 @@
 .titlebar {
+    background-image: linear-gradient(to right, #3E5151, #DECBA4);
     display: flex;
     background-color: rgb(179, 179, 179);
     border-radius: 10px;
