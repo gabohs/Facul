@@ -1,0 +1,71 @@
+@font-face {
+    font-family: Verve;
+    src: url('../font/Verve.ttf')  
+}
+
+body {
+    font-family: Verve;
+    background-color: var(--bg);
+}
+.logo {
+    width: 300px; 
+    height: auto;
+}
+
+nav a:hover {
+    font-size: 1.1em;
+}
+
+.tv {
+    width: 500px;
+    height: 500px;
+    background-image: url('../img/tv/noise-tv.gif'); 
+    border: 10px solid #333;
+    border-radius: 20px;
+    box-shadow: 0 0 30px 10px rgba(0,0,0, 0.5);
+    
+    position: relative;
+    padding: 20px;
+    margin: 10px;
+}
+
+.tv::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle at center, #646464, #444);
+    border-radius: 50%;
+}
+
+.tv-frame .carousel-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;      
+    height: 100%;     
+}
+
+.tv-frame .carousel-inner img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.carousel_controls_icon {
+    color: black;    
+    font-size: 3rem !important;     
+    background: none;    
+    border: none;
+}
+
+.box {
+    width: 700px;
+    height: 600px;
+
+    background-color: var(--brown);
+    border-radius: 10px;
+
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);;
+}
