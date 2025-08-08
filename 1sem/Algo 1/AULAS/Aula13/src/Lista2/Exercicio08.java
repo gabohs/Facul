@@ -25,7 +25,7 @@ public class Exercicio08
         LinkedList<String> salao = new LinkedList();
         LinkedList<String> delivery = new LinkedList();
        
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 20; i++)
         {
             pedidos.add(leitor.nextLine());
         }

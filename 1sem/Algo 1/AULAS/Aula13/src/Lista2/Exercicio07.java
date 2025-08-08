@@ -7,7 +7,7 @@ import java.util.LinkedList;
 Escreva um programa que crie uma fila para armazenar valores inteiros. Faça a leitura, a partir
 do teclado, de 30 valores e armazene na fila. Retire cada um dos elementos da fila e
 armazene-os em duas novas filas, uma somente para valores positivos e a outra para valores
-não-positivos..
+não-positivos
  */
 
 public class Exercicio07
