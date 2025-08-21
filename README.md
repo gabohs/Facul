@@ -1,9 +1,2 @@
-![IFRS Logo](resources/ifrsLogo.png)
+### Repositório referente à Faculdade de Análise e Desenvolvimento de Sistemas no IFRS
 
-# Facul
-
-Repositório referente à Faculdade de Análise e Desenvolvimento de Sistemas no IFRS
-
-> * **Campus:** Erechim
-> * **Aluno:** Gabriel H. Schaeffer
-> * **Semestre Atual:** 1
