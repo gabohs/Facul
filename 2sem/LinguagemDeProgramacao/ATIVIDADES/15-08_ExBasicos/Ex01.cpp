@@ -10,8 +10,13 @@ Caso alguma seja inferior ou igual a 5.0, prevalecerá a menor das duas avaliaç
 int main()
 {
     double av1, av2;
-    std::cin >> av1 >> av2;
 
+    do 
+    {   
+        std::cout << "Digite as notas: " << std::endl;
+        std::cin >> av1 >> av2;
+    } while (av1 < 0 || av2 < 0 || av1 > 10 || av2 > 10);
+    
     double valorFinal = av1;
 
     if (av1  >= 9.0 && av2 >= 9.0)
