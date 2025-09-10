@@ -1,0 +1,3 @@
+/*
+Calcular a media
+*/
