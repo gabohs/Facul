@@ -84,6 +84,7 @@ function validaData()
     {   
         data.setAttribute('class', 'form-control is-valid')
         helpData.setAttribute('class', 'form-text text-muted visually-hidden')
+        
         return true;
     } 
 }
