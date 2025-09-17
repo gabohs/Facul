@@ -6,6 +6,7 @@
 
 ## Linked List / Chained List
 
+> [!NOTE]
 > Sequência de elementos em que cada nó contém uma referência (ponteiro) para seu sucessor (e opcionalmente para seu antecessor, em listas duplamente encadeadas), permitindo a ligação entre os elementos.
 
 ![alt text](img/listaDiagrama.png)
@@ -22,7 +23,11 @@
 
 ## Filas (Queue)
 
+> [!NOTE]
 > Estrutura em que a inserção ocorre **sempre** no final e a remoção **sempre** no inicio
+
+> [!IMPORTANT]
+> FIFO (first in, first out)
 
 ![queue](img/queue.png)
 
@@ -44,9 +49,16 @@ Exemplos:
 
 ## Pilha (Stack)
  
+> [!NOTE]
 > Estrutura em que a inserção e a remoção/consulta **sempre** ocorro no TOPO (entenda como inicio)
 
-- Visão é na direção vertical 
+> [!IMPORTANT]
+> LIFO (last in, first out)
+
+> [!TIP]
+> Visualize na direção vertical 
+
+
   
 ![stack](img/stack.png)
 
@@ -62,6 +74,7 @@ Exemplo:
 
 ## Lista Ordenada
 
+> [!NOTE]
 > Garante que os elementos estejam em uma ordem pré-determinada
 
 ### Inserindo: 
