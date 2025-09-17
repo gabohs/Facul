@@ -10,7 +10,7 @@
 
 ![alt text](img/listaDiagrama.png)
   
-<small>Obs: Nas implementações das estruturas, o professor utilizou `info` para nomear a porcão que contem o dado que o node armazena. No entanto, para manter a consistência com o diagrama acima, optei por usar a palavra `data` (dado)</small>
+<small>Obs: Nas implementações das estruturas, o professor utilizou `info` para nomear a porcão que contêm o dado que o node armazena. No entanto, para manter a consistência com o diagrama acima, optei por usar a palavra `data` (dado)</small>
 
 ### Operação de inserção
 
