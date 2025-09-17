@@ -73,3 +73,12 @@ Exemplo:
 - Quando o novo elemento é o maior: insere no fim
 
 - Quando o novo elemento é "intermediário" (no meio dos outros): inserir entre dois elementos
+
+---
+
+#### Sequência que as estruturas foram implementadas em aula:
+
+1. listasimples.cpp
+2. pilha.cpp
+3. fila.cpp
+4. listaordenada.cpp
