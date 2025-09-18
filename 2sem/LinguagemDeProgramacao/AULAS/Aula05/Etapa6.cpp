@@ -1,6 +1,6 @@
 /*
-Implemente uma função que calcule a média dos alunos e armazene na estrutura de dados
-criada.
+Implemente uma função que leia a quantidade de faltas dos alunos e armazene na estrutura de
+dados criada.
 */
 
 #include <iostream>
@@ -83,6 +83,16 @@ void atualizaMedia(int numAlunos, int numNotas)
 	}	
 }
 
+void leituraFaltas(int numAlunos)
+{
+    for (int i = 0; i < numAlunos; i++)
+    {
+        std::cout << "Aluno: " << nome[i] << std::endl;
+        std::cout << "Faltas: ";
+        std::cin >> faltas[i];
+    }
+}
+
 
 int main()
 {   
@@ -98,6 +108,8 @@ int main()
 
     leituraTodasAvaliacoes(nAlunos, nNotas);
     atualizaMedia(nAlunos, nNotas);
+
+    leituraFaltas(nAlunos);
 
     return 0;
 }
