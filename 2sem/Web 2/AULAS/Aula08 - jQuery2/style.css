@@ -1,0 +1,12 @@
+.produto {
+    text-decoration: line-through;
+}
+
+li {
+    user-select: none;
+}
+
+.riscado {
+    color: red;
+    text-decoration: line-through;
+}
