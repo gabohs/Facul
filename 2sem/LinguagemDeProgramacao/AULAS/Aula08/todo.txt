@@ -1,0 +1,8 @@
+[TAREFA 1]: JogarVideogame
+[CATEGORIA]: lazer
+[PRIORIDADE]: 1
+
+[TAREFA 2]: Estudar
+[CATEGORIA]: estudo
+[PRIORIDADE]: 3
+
