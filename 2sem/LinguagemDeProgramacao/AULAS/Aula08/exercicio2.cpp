@@ -1,11 +1,15 @@
 /*
-Implemente um programam que crie um arquivo com uma lista de tarefas. Cada tarefa deve ter: 
-    - descricao, categoria (casa, trabalho, ...), prioridade (1 a 5)
+Implemente um programam que crie um arquivo com uma lista de tarefas. 
+Cada tarefa deve ter: 
+    - descricao;
+    - categoria (casa, trabalho, ...); 
+    - prioridade (1 a 5)
 */
 
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <iomanip>
 
 struct Tarefa
 {
@@ -15,7 +19,7 @@ struct Tarefa
     int prioridade;
 };
 
-class Arquivo
+class ListaDeTarefas
 {
 private:
     std::vector<Tarefa> tarefas;
@@ -24,12 +28,12 @@ private:
     void sortLista()
     {
         int n = tarefas.size();
+
         bool trocou;
-    
-        for (int i = 0; i < n - 1; i++) 
+        for (int i = 0; i < (n - 1); i++) 
         {
             trocou = false;
-            for (int j = 0; j < n - i - 1; j++) 
+            for (int j = 0; j < (n - i - 1); j++) 
             {
                 if (tarefas[j].prioridade > tarefas[j + 1].prioridade) 
                 {
@@ -44,7 +48,7 @@ private:
     }
 
 public:
-    Arquivo(const char* nome) : arq(nome)
+    ListaDeTarefas(const char* nome) : arq(nome)
     {
     }
 
@@ -56,12 +60,14 @@ public:
     void escreveNoArquivo()
     {      
         sortLista();
+
         for (int i = 0; i < tarefas.size(); i++)
         {   
             arq << "[TAREFA " << i + 1 << "]: ";
-            arq << tarefas[i].descricao << "\n";
-            arq << "[CATEGORIA]: " << tarefas[i].categoria << "\n";
-            arq << "[PRIORIDADE]: " << tarefas[i].prioridade << "\n";
+            arq << tarefas[i].descricao  << "\n";
+
+            arq << std::setw(15) << "    [CATEGORIA]:  "  << tarefas[i].categoria  << "\n";
+            arq << std::setw(15) << "    [PRIORIDADE]: "  << tarefas[i].prioridade << "\n";
             arq << "\n";
         }
     }
@@ -70,7 +76,7 @@ public:
 int verificaPrioridade(int prioridade)
 {
     if (prioridade > 5 || prioridade < 1)
-        return 100;
+        return -1;
 
     return prioridade;
 }
@@ -79,10 +85,10 @@ int main()
 {   
     system("cls");
 
-    Arquivo arquivo("todo.txt");
+    ListaDeTarefas todo("todo.txt"); // To-Do List
 
-    char parar;
-    while(parar != 's')
+    char salvar;
+    while(salvar != 's')
     {
         Tarefa t;
 
@@ -98,13 +104,13 @@ int main()
 
         t.prioridade = verificaPrioridade(prioridade);
 
-        arquivo.adicionaTarefa(t);
+        todo.adicionaTarefa(t);
 
-        std::cout << "Parar?: ";
-        std::cin >> parar;
+        std::cout << "Salvar?: ";
+        std::cin >> salvar;
     }
 
-    arquivo.escreveNoArquivo();
+    todo.escreveNoArquivo();
 
     return 0;
 }

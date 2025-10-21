@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Calculadora IMC - JS Puro</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+        
+        <div class="container">
+            <div class="text-center my-5">
+                <h1>Calculadora de IMC</h1>
+                <h4>Versão JS Vanilla</h4>
+                <p>Aluno: Gabriel H. Schaeffer</p>
+            </div>
+
+            <div class="form border border-secondary p-3 rounded" id="form">
+                <h3>Informe seus dados:</h3>
+                
+                <div class="sexo">
+                    <p>Sexo:</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sex"
+                            id="sfem"
+                            value="0"
+                        />
+                        <label class="form-check-label" for="sfem">Feminino</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sex"
+                            id="smasc"
+                            value="1"
+                        />
+                        <label class="form-check-label" for="smasc">Masculino</label>
+                    </div>
+                </div>
+
+                <div class="altura my-4">
+                    <div class="mb-3">
+                        <label for="btnAltura" class="form-label">Altura</label>
+                        <input type="text" class="form-control" name="alturabtn"
+                            id="btnAltura"
+                            placeholder="Digite sua altura em metros"
+                        />
+                    </div>
+                </div>
+
+                <div class="peso">
+                    <div class="mb-3">
+                        <label for="btnPeso" class="form-label">Peso</label>
+                        <input type="text" class="form-control" name="pesobtn"
+                            id="btnPeso"
+                            placeholder="Digite seu peso em kilogramas"
+                        />
+                    </div>
+                </div>
+
+                <div class="termos">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="termos" />
+                        <label class="form-check-label" for="termos">Concordo com os termos de uso</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary my-3" id="btnSubmit" disabled>
+                    Calcular IMC
+                </button>
+            </div>
+
+            <div class="resultado mt-4 invisible" id="resultado">
+                <div class="text-center">
+                    <h3>Resultado</h3>
+                </div>
+                <div class="d-flex justify-content-center mb-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="../img/f1.png" alt="Title" id="rImg"/>
+                        <div class="card-body">
+                            <h4 class="card-title" id="rClassificacao">Normal</h4>
+                            <p class="card-text" id="imcVal">IMC: </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            
+            
+        </div>
+
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

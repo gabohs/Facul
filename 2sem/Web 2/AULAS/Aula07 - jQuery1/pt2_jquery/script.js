@@ -2,7 +2,7 @@
 
 $(document).ready( () => 
 {
-    $('p').attr('class', 'dif') // atribuindo classe 'p' à todos os elementos 'p'
+    $('p').attr('class', 'dif') // atribuindo classe 'dif' à todos os elementos 'p'
     $('#btnjquery').click(clickjquery)
 
     $('p').click(function(event)
@@ -13,6 +13,5 @@ $(document).ready( () =>
 
 function clickjquery()
 {   
-    
     alert('Clique jQuery')
 }

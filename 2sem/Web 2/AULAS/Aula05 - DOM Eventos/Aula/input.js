@@ -1,4 +1,3 @@
-
 function verFoco()
 {
     console.log("Evento 'focus'")

@@ -5,11 +5,14 @@ document.write("<p>Round de 4.499  = " + Math.round(4.499) + "</p>")
 document.writeln("<p>Round de 4.5  = " + Math.round(4.5)   + "</p>")
 
 
-// for (let i = 0; i <h1 100; i++)
+// for (let i = 0; i < 100; i++)
 // {
 //     let aleatorio = Math.ceil( Math.random() * 60 )
 //     document.write("<p>Num aleatório = " + aleatorio + "</p>")
 // }
+
+let random5_10 = Math.floor( Math.random() * (10 - 5) + 5 )
+document.writeln( "<p>" + random5_10 + "</p>" )
 
 let s = "IFRS Erechim"
 document.write("<h1>" + s + "</h1>")
@@ -35,7 +38,7 @@ document.write("<p> Data internamente (anos): "  + Date.now() / 1000 / 60 / 60 /
 let hj = new Date()
 let nasc = new Date("2007-03-21 17:15:00")
 
-let idade = (hj - nasc) / 1000 / 60/ 60/ 24 / 365;
+let idade = (hj - nasc) / 1000 / 60/ 60 / 24 / 365;
 
 // hj.setDate(hj.getDate() + 7) // eh possível alterar a data do objeto Date. Nesse caso, vamos p p msm dia na semana q vem
 

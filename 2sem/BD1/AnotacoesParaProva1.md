@@ -32,36 +32,7 @@
 - Físico: Como os dados são realmente armazenados
 
 
-## 4. Normalização
-
-#### Objetivos
-
-- Eliminar redundâncias e inconsistências
-- Garantir integridade dos dados
-- Facilitar manutenção
-- Melhorar desempenho
-
-### Formas Normais
-
-#### Primeira Forma Normal (1FN)
-
--  Cada célula contém apenas um valor atômico
--  Cada registro é único (chave primária)
--  Não pode ter atributos multivalorados ou compostos
-
-### Segunda Forma Normal (2FN)
-
-- Deve estar em 1FN
-- Todos os atributos não-chave dependem completamente da chave primária
-- Elimina dependências parciais
-
-### Terceira Forma Normal (3FN)
-
-- Deve estar em 2FN
-- Nenhum atributo não-chave depende de outro atributo não-chave
-- Elimina dependências transitivas
-
-## 5. Tipos de Dados
+## 4. Tipos de Dados
 
 #### Tipos de Caracteres
 
@@ -81,7 +52,111 @@
 - DATETIME: Data e hora
 - DATETIME2: Versão melhorada do DATETIME
 
-## 6. Linguagem SQL
+## 5. As Principais Restrições (Constraints)
+
+- PRIMARY KEY: Chave primária
+- FOREIGN KEY: Chave estrangeira
+- UNIQUE: Valores únicos
+- NOT NULL: Não aceita valores nulos
+- DEFAULT: Valor padrão
+- CHECK: Verifica limites de valores
+
+##  6. Modelo Entidade-Relacionamento (MER)
+
+- Lista de entidades, atributos e relacionamentos.
+
+### Componentes Principais
+
+#### Entidades 
+
+- Objetos do mundo real (pessoas, objetos, eventos)
+
+#### Atributos 
+
+- Características que descrevem as entidades
+- Possuem sempre um tipo de dados (domínio)
+
+- Atributo Simples/Atômico: indivisível. Ex.: CPF. Em um cenário ideal, todos os atributos de uma tabela (entidade) devem ser atômicos, e ao desenvolver o banco de dados deve-se ter isto como objetivo, salvo algumas exceções.
+  
+- Atributo Composto: pode sem dividido em atributos menores. Ex.: Endereço
+  
+- Atributo Multivalorado: pode conter mais de um valor para um mesmo registro. Ex.: Telefone. Por exemplo, uma pessoa pode ter tanto um telefone pessoal, quanto um telefone de casa.
+
+- Atributo Determinante: pode ser um ID específico, ou também um CPF, por exemplo, visto que este é um número único. Como ele nunca se repete, sabendo o valor do atr. determinante, podemos descobrir com certeza o valor de outro(s) atributo(s). Um exemplo seria a chave primária.
+
+- Atributo Identificador: identifica uma instância específica na classe de entidade. Um exemplo seria as chaves estrangeiras.
+
+
+#### Relacionamentos
+
+- Associações entre entidades
+
+### Cardinalidades
+
+#### Um para Um (1:1)
+
+- Uma ocorrência de A se relaciona com apenas uma de B
+
+#### Um para Muitos (1:N)
+
+- Uma ocorrência de A se relaciona com várias de B
+
+#### Muitos para Muitos (N:N)
+
+- Várias ocorrências de A se relacionam com várias de B
+
+### Chaves
+
+#### Chave Primária: 
+
+- Identifica exclusivamente cada registro em uma tabela, e, portanto, deve ser única (sem repetições)
+
+#### Chave Estrangeira: 
+
+- Estabelece um relacionamento com a chave primária de outra tabela
+- A partir dela podemos identificar com qual registro em outra tabela o registro em análise está relacionado
+
+#### Chave Candidata/Alternativa: 
+
+- Outros atributos que podem identificar registros
+
+## 7. Diagrama Entidade-Relacionamento (DER)
+
+- utilizado para representar de forma gráfica o que foi descrito no MER 
+
+## 8. Normalização
+
+#### Objetivos
+
+- Eliminar redundâncias e inconsistências
+- Garantir integridade dos dados
+- Facilitar manutenção
+- Melhorar desempenho
+
+### Formas Normais
+
+#### Primeira Forma Normal (1FN)
+
+- Cada célula contém apenas um valor atômico
+- Para isso é preciso decompor atributos multivalorados
+
+- Cada registro é único (chave primária)
+- Não pode ter atributos multivalorados ou compostos
+
+#### Segunda Forma Normal (2FN)
+
+- Deve estar em 1FN
+- Todos os atributos não-chave dependem completamente da chave primária
+- Elimina dependências parciais
+
+#### Terceira Forma Normal (3FN)
+
+- Deve estar em 2FN
+- Nenhum atributo não-chave depende de outro atributo não-chave
+- Elimina dependências transitivas
+
+
+## 9. Linguagem SQL
 
 #### Divisões da SQL
 
@@ -198,67 +273,10 @@ SELECT modelo, valorDiaria FROM carro WHERE valorDiaria BETWEEN 80 AND 120;
 
 SELECT placa FROM carro WHERE placa LIKE "%1234";
 
-SELECT modelo FROM carro WHERE modelo NOT LIKE "%a";
+SELECT modelo FROM carro WHERE modelo NOT LIKE "_a";
 
 DELETE FROM carro WHERE ID IN(11, 12);
 ```
-
-## 7. As Principais Restrições (Constraints)
-
-- PRIMARY KEY: Chave primária
-- FOREIGN KEY: Chave estrangeira
-- UNIQUE: Valores únicos
-- NOT NULL: Não aceita valores nulos
-- DEFAULT: Valor padrão
-- CHECK: Verifica limites de valores
-
-##  8. Modelo Entidade-Relacionamento (MER)
-
-- Lista de entidades, atributos e relacionamentos.
-
-### Componentes Principais
-
-#### Entidades 
-
-- Objetos do mundo real (pessoas, objetos, eventos)
-
-#### Atributos 
-
-- Características que descrevem as entidades
-- Possuem sempre um tipo de dados (domínio)
-
-- Atributo Simples/Atômico: indivisível. Ex.: CPF. Em um cenário ideal, todos os atributos de uma tabela (entidade) devem ser atômicos, e ao desenvolver o banco de dados deve-se ter isto como objetivo, salvo algumas exceções.
-  
-- Atributo Composto: pode sem dividido em atributos menores. Ex.: Endereço
-  
-- Atributo Multivalorado: pode conter mais de um valor para um mesmo registro. Ex.: Telefone. Por exemplo, uma pessoa pode ter tanto um telefone pessoal, quanto um telefone de casa.
-
-- Atributo Determinante: pode ser um ID específico, ou também um CPF, por exemplo, visto que este é um número único. Como ele nunca se repete, sabendo o valor do atr. determinante, podemos descobrir com certeza o valor de outro(s) atributo(s). Um exemplo seria a chave primária.
-
-- Atributo Identificador: identifica uma instância específica na classe de entidade. Um exemplo seria as chaves estrangeiras.
-
-
-#### Relacionamentos
-
-- Associações entre entidades
-
-### Tipos de Relacionamentos (Cardinalidade)
-
-- Um para Um (1:1)
-- Um para Muitos (1:N)
-- Muitos para Um (N:1)
-- Muitos para Muitos (N:N)
-
-### Chaves
-
-- Chave Primária: Identifica exclusivamente cada registro
-- Chave Estrangeira: Estabelece relacionamentos entre entidades
-- Chave Candidata/Alternativa: Outros atributos que podem identificar registros
-
-
-## 9. Diagrama Entidade-Relacionamento (DER)
-
-- utilizado para representar de forma gráfica o que foi descrito no MER 
 
 
 
