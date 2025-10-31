@@ -42,6 +42,18 @@ public:
         }
     }
 
+    const Informacao& lerInfo() const
+    {
+        Informacao nova;
+
+        return nova;
+    }
+
+    void mostraTabela()
+    {
+
+    }
+
 private:
     std::ofstream m_Arq;
 
