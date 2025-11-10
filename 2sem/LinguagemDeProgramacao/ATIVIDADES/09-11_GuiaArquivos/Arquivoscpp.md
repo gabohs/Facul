@@ -58,7 +58,7 @@ arq.close();
 
 - `std::ios::trunc`: Os conteúdos são deletados ao abrir o arquivo.
 
-- Como o constructor das funções recebe um bitmask, é possível definir várias flags ao mesmo tempo, como:
+- Como esse segundo argumento que pode ser especificado é um bitmask (ios_base::openmode), é possível definir várias flags ao mesmo tempo usando o operator bitwise OR (|):
 
 ```c++
 std::fstream arq("oi.csv", std::ios::out | std::ios::in);
@@ -193,3 +193,11 @@ while (!arq.eof())
 - `std::filesystem::copy_file(a1, a2)`: copia a1 para a2
 - `std::filesystem::exists(dir)`: retorna true se o arquivo/caminho existir
 - `std::filesystem::is_directory(p)`: retorna true se p for um diretório
+- `std::filesystem::is_regular_file(p)`: retorna true se p for um arquivo
+
+
+## REFERÊNCIAS
+
+- https://cppreference.com/
+- https://www.studyplan.dev/pro-cpp/file-streams
+- https://www.geeksforgeeks.org/cpp/file-system-library-in-cpp-17/
