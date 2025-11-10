@@ -78,8 +78,6 @@ void buscarAnotacao()
 {
     std::ifstream arquivo("arquivos/listacsv.csv");
 
-    
-
     arquivo.close();
 }
 

@@ -25,7 +25,7 @@ int printMenu()
 
 int main()
 {
-    std::fstream("arquivos/lendo_escrevendo.csv", std::ios::app | std::ios::in);
+    std::fstream arq("arquivos/lendo_escrevendo.csv", std::ios::app | std::ios::in);
 
     int op; 
     do 
