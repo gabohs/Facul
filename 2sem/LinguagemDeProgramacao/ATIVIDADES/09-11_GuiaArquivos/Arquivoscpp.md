@@ -46,7 +46,7 @@ arq.close();
 
 ### Modos de abrir
 
-- O constructor das funções para criar uma stream (e também a função open) aceitam um segundo argumento: std::ios_base::openmode. Ele é um bitmask especifica o modo em que o arquivo será aberto. Esses modos definem o que podemos fazer com o arquivo.
+- O constructor das funções para criar uma stream (e também a função open) aceitam um segundo argumento: std::ios_base::openmode. Ele é um bitmask que especifica o modo em que o arquivo será aberto. Esses modos definem o que podemos fazer com o arquivo.
 
 #### Principais modos:
 
@@ -67,7 +67,7 @@ std::fstream arq("oi.csv", std::ios::out | std::ios::in);
 ### Lidando com erros de abertura
 
 - A função `is_open()` retorna um boolean que representa se o arquivo está ou não aberto. 
-- Portanto, podemos verificar com um if:
+- Portanto, podemos verificar com um if se tudo ocorreu bem ao tentar abrir algum arquivo:
 
 ```c++
 if (!arq.is_open())
@@ -108,7 +108,7 @@ arqw.close();
 std::ifstream arqr("arquivo.txt");
 ```
 
-- Podemos usar o operador >> para ler até encontrar um espaço
+- Podemos usar o operador >> para ler até encontrar um espaço (ou seja, ler uma única palavra)
 
 ```c++
  std::string texto1, texto2;
@@ -127,7 +127,7 @@ std::cout << texto1 << texto2;
 > 
 > \> Hello,World!
 
-- Podemos usar a função `getline()` para ler uma linha inteira. Ou seja, ela lê até encontrar um caractere de nova linha "\n";
+- Podemos usar a função `getline()` para ler uma linha inteira. Ou seja, ela lê até encontrar um caractere de nova linha '\n';
 
 ```c++
 std::string linha;
@@ -176,3 +176,20 @@ while (!arq.eof())
     std::cout << palavra;
 }
 ```
+
+## Header \<filesystem\>
+
+- `std::filesystem::path p("path")`: representa um path para um arquivo
+
+- `p.filename()`: retorna o nome do arquivo (com a extensão, inclusive)
+- `p.extension()`: retorna apenas a extensão do arquivo
+- `p.parent_path()`: retorna o diretório que contém o arquivo
+- `p.relative_path()`: retorna o caminho relativo do arquivo
+- `std::filesystem::absolute(p)`: retorna o caminho absoluto de p 
+- `std::filesystem::file_size(p)`: retprma o tamanho  em bytes de p
+  
+- `std::filesystem::create_directory(dir)`: cria um único diretório no local desejado
+- `std::filesystem::create_directories(dir)`: cria diretórios aninhados
+- `std::filesystem::copy_file(a1, a2)`: copia a1 para a2
+- `std::filesystem::exists(dir)`: retorna true se o arquivo/caminho existir
+- `std::filesystem::is_directory(p)`: retorna true se p for um diretório
