@@ -3,9 +3,9 @@
 #include <filesystem>
 #include <ios>
 
-/*
-Peça para o usuário digitar uma pasta/caminho. Liste os arquivos da pasta.
-*/
+
+// Peça para o usuário digitar uma pasta/caminho. Liste os arquivos da pasta.
+
 
 int main()
 {   

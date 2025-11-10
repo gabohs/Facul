@@ -3,9 +3,7 @@
 #include <filesystem>
 #include <ios>
 
-/*
-Conte quantos arquivos e quantas pastas o caminho atual possui
-*/
+// Conte quantos arquivos e quantas pastas o caminho atual possui
 
 int main()
 {   
