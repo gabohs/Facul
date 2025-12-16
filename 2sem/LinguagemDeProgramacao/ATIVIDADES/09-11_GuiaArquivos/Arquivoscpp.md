@@ -131,16 +131,11 @@ std::cout << texto1 << texto2;
 
 ```c++
 std::string linha;
-std::getline(arqr, linha);
-
-arqr.close();
-
-std::cout << linha << "\n";
-```
-
-> Output:
-> 
-> \> Hello, World!
+while (std::getline(arq, linha))
+{
+    std::cout << linha << "\n";
+}
+``` 
 
 Podemos usar a função `get()` para extrair um caractere.
 

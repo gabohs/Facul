@@ -39,8 +39,7 @@ ALTER TABLE cidade
 	ADD COLUMN regiao VARCHAR(20) NOT NULL;
     
 UPDATE cidade SET regiao = 
-CASE
-	WHEN uf in ('RS', 'SC', 'PR')
+CASE	WHEN uf in ('RS', 'SC', 'PR')
 		THEN 'Sul'
 	WHEN uf in ('SP', 'RJ', 'ES')
 		THEN 'Sudeste'
