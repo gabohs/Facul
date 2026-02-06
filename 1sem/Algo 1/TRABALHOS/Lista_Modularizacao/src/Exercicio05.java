@@ -14,10 +14,7 @@ public class Exercicio05
 {   
     public static boolean ehPar(int numero)
     {
-        if (numero % 2 == 0)
-            return true;
-        
-        return false;
+        return numero % 2 == 0;
     }
     
     public static void main(String[] args)
