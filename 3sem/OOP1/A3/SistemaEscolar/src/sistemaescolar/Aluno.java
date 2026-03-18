@@ -22,6 +22,23 @@ public class Aluno
         this.notas = new double[num_disciplinas][num_notas];
     }
     
+    // ----------------------------------------------------------------------
+    
+    public String getNome()
+    {
+        return this.nome;
+    }
+    
+    public String getMatricula()
+    {
+        return this.num_matricula;
+    }
+    
+    public String getCurso()
+    {
+        return this.curso;
+    }
+    
     public int getNumDisciplinas()
     {
         return this.num_disciplinas;
@@ -30,6 +47,16 @@ public class Aluno
     public int getNumNotas()
     {
         return this.num_notas;
+    }
+    
+    public String[] getDisciplinas()
+    {
+        return this.disciplinas;
+    }
+    
+    public double[][] getNotas()
+    {
+        return this.notas;
     }
     
     public void setNome(String nome)
@@ -56,6 +83,8 @@ public class Aluno
     {
         this.notas = notas;
     }
+    
+    // ----------------------------------------------------------------------
     
     public double calcula_media_disciplina(int num_disciplina)
     {
@@ -101,10 +130,10 @@ public class Aluno
             
             for (int j = 0; j < this.num_notas; j++)
             {
-                System.out.print(this.notas[i][j] + "\t");
+                System.out.print(String.format("%.2f", notas[i][j]) + "\t");
             }
             
-            System.out.print(this.calcula_media_disciplina(i) + "\t" + (this.esta_aprovado_disciplina(i) ? "Aprovado" : "Reprovado"));
+            System.out.print(String.format("%.2f", this.calcula_media_disciplina(i)) + "\t" + (this.esta_aprovado_disciplina(i) ? "Aprovado" : "Reprovado"));
             
             System.out.print("\n");
         }
