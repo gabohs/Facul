@@ -1,0 +1,28 @@
+1. 
+Criar um projeto como aplicacao Java no netbeans chamado SistemaPessoa
+
+2. 
+Criar uma classe chamada Pessoa, com os atributos:
+
+    String nome, String endereco, String telefone
+
+Esses atributos devem estar encapsulados e terem os respectivos metodos getters e setters e o constructor que recebe os parametros e os atribui aos respectivos atributos da classe
+Criar tambem um metodo "escrever" que escreve os atributos da classe na tela
+
+3.
+Crie uma subclasse de Pessoa chamada Fornecedor. Essa classe tem todos os atributos da pessoa e mais os atributos
+   
+    double valor_credito (credito maximo dado por uma fornecedor), double valor_divida (valor q estamos devendo ao fornecedor). 
+
+Estes devem estar encapsulados.
+Crie o constructor da classe que recebe como parametros os valores nome, endereco, telefone, valor_credito e valor_divida. Use o constructor da superclasse.
+Implemente na classe fornecedor os getters e setters e tambem um metodo chamado obterSaldo(), que devolve a diferenca entre valor_credito e valor_divida.
+
+4. Fazer um menu do tipo:
+
+O que voce quer criar? (1- pessoa, 2- fornecedor):
+
+Se ele escolher 1: ler dados de uma pessoa, criar uma pessoa e imprimi-la na tela
+Se ele escolher 2: ler dados de um fornecedor, crira um fornecedor e imprimi-lo na tela
+
+Depois perguntar: "Quer criar outra pessoa?" e se a resposta for sim, repetir tudo dnv
