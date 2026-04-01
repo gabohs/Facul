@@ -18,11 +18,23 @@ Estes devem estar encapsulados.
 Crie o constructor da classe que recebe como parametros os valores nome, endereco, telefone, valor_credito e valor_divida. Use o constructor da superclasse.
 Implemente na classe fornecedor os getters e setters e tambem um metodo chamado obterSaldo(), que devolve a diferenca entre valor_credito e valor_divida.
 
-4. Fazer um menu do tipo:
+4.
+Crie uma outra subclasse de Pessoa e chame-a de Empregado. Essa classe devera ter todos os atributos da classe pessoa, mais os atributos:
+
+int codigoSetor, double salarioBase, double imposto (porcentagem de desconto de impostos sobre o salario base)
+
+Criar o metodo construtor, que recebe como parametros os valores: nome, endereco, telefone, codigoSetor, salarioBase e valor da porcentagem do imposto e atribui esses valores aos respectivos atributos da classe. 
+Tambem implemente na classe Empregado, os metodos acessores e mutantes (getters e setters) e tambem um metodo chamado calcularSalario() que devolve o salario considerando a porcentagem de impostos
+A formula eh: valorretorno = salarioBase - (salarioBase * imposto)
+
+5. Fazer um menu do tipo:
 
 O que voce quer criar? (1- pessoa, 2- fornecedor):
 
 Se ele escolher 1: ler dados de uma pessoa, criar uma pessoa e imprimi-la na tela
-Se ele escolher 2: ler dados de um fornecedor, crira um fornecedor e imprimi-lo na tela
+Se ele escolher 2: ler dados de um fornecedor, criar um fornecedor e imprimi-lo na tela
+Se ele escolher 3: ler dados de um empregado, cria-lo e imprimo-lo na tela
 
 Depois perguntar: "Quer criar outra pessoa?" e se a resposta for sim, repetir tudo dnv
+
+

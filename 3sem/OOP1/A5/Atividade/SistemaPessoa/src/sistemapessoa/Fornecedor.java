@@ -2,50 +2,57 @@ package sistemapessoa;
 
 public class Fornecedor extends Pessoa
 {
-    private double valor_credito;
-    private double valor_divida;
+    private double valorCredito;
+    private double valorDivida;
     
     public Fornecedor(String nome, String endereco, String telefone, double vcred, double vdiv)
     {
         super(nome, endereco, telefone);
-        this.valor_credito = vcred;
-        this.valor_divida  = vdiv;
+        this.valorCredito = vcred;
+        this.valorDivida  = vdiv;
     }
     
     public double getValorCredito()
     {
-        return this.valor_credito;
+        return this.valorCredito;
     }
     
     public double getValorDivida()
     {
-        return this.valor_divida;
+        return this.valorDivida;
     }
     
     public void setValorCredito(double vcred)
     {
-        this.valor_credito = vcred;
+        this.valorCredito = vcred;
     }
     
     public void setValorDivida(double vdiv)
     {
-        this.valor_divida = vdiv;
+        this.valorDivida = vdiv;
     }
     
     // ---------
     
     public double obterSaldo()
     {
-        return this.valor_credito - valor_divida;
+        return this.valorCredito - valorDivida;
     }
     
     @Override
     public void escrever()
     {
         super.escrever();
-        System.out.println("Valor Credito: " + this.valor_credito);
-        System.out.println("Valor Divida:  " + this.valor_divida);
+        System.out.println("Valor Credito: " + this.valorCredito);
+        System.out.println("Valor Divida:  " + this.valorDivida);
         System.out.println("Saldo:         " + obterSaldo());
+    }
+    
+    @Override
+    public String toString()
+    {
+        super.toString();
+        return "Fornecedor{vCred: " + this.valorCredito + ", vDiv: " + this.valorDivida + ", saldo: " + this.obterSaldo() + "}";
     }
     
 }

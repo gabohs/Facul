@@ -51,4 +51,10 @@ public class Pessoa
         System.out.println("Endereco: " + this.endereco);
         System.out.println("Telefone: " + this.telefone);
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Pessoa{nome: " + this.nome + ", endereco: " + this.endereco + ", telefone: " + this.telefone + "}";
+    }
 }

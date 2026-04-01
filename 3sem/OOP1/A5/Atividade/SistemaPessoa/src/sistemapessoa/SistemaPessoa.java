@@ -25,8 +25,9 @@ public class SistemaPessoa
         
         String resposta = "S";
         
-        while (resposta.equals("S"))
+        while (resposta.equalsIgnoreCase("S"))
         {
+            System.out.println("");
             System.out.println("1 - PESSOA");
             System.out.println("2 - FORNECEDOR");
             System.out.println("3 - EMPREGADO");
@@ -34,6 +35,11 @@ public class SistemaPessoa
             System.out.print("> O que voce quer criar?: ");
             int escolha = scan.nextInt();
             
+            if (escolha < 1 || escolha > 3)
+            {
+                System.out.println("Numero invalido");
+                continue;
+            }
             scan.nextLine();
             
             System.out.print("> Nome: ");
@@ -51,8 +57,9 @@ public class SistemaPessoa
                 {
                     Pessoa p = new Pessoa(nome, end, tele);
                     
-                    System.out.println("");
+                    System.out.println("=====================================================");
                     p.escrever();
+                    System.out.println("=====================================================");
                 } break;
                 
                 case 2:
@@ -65,20 +72,36 @@ public class SistemaPessoa
                     
                     Fornecedor f = new Fornecedor(nome, end, tele, vCred, vDiv);
                     
-                    System.out.println("");
+                    System.out.println("=====================================================");
                     f.escrever();
+                    System.out.println("=====================================================");
+                    
                     scan.nextLine();
                 } break; 
                 
                 case 3:
                 {
-                    // ler empregado
+                    System.out.print("> Codigo Setor: ");
+                    int cSetor = scan.nextInt();
+                    
+                    System.out.print("> Salario base: ");
+                    double sBase = scan.nextDouble();
+                    
+                    System.out.print("> Imposto sobre o salario (%): ");
+                    double pImposto = scan.nextDouble();
+                    
+                    Empregado e = new Empregado(nome, end, tele, cSetor, sBase, pImposto);
+                    
+                    System.out.println("=====================================================");
+                    e.escrever();
+                    System.out.println("=====================================================");
+                    
+                    scan.nextLine();
                 } break;
                     
                 default:
-                    System.out.println("Numero invalido:");
+                    break;
             }
-            
             
             System.out.print("Quer Continuar? (S/N)");
             resposta = scan.nextLine();
