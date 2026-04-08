@@ -1,0 +1,1 @@
+OBS: Na primeira parte da aula, continuamos o exercicio da aula 6. Continuamos a partir da pagina 4 do slide `Aula 5 - Pilares da POO -` localizado na Aula 6 (`A6`)
