@@ -1,0 +1,170 @@
+Exercício 3.A
+
+set serverout on 
+
+DECLARE
+	v_maior emp.empno%type;
+	v_ename emp.ename%type;
+	v_job   emp.job%type;
+BEGIN
+	select max(empno)
+	into v_maior
+	from emp;
+
+
+	select ename, job
+	into v_ename, v_job
+	from emp
+	where empno = v_maior;
+
+	
+	DBMS_OUTPUT.NEW_LINE;
+	dbms_output.put_line('Nome: '|| to_char(v_ename) || '   Cargo: ' || to_char(v_job) || '   Num: ' || to_char(v_maior));
+
+END;
+/
+
+
+
+
+
+Exercício 3.B
+
+DECLARE
+	v_maxhiredate emp.hiredate%type;
+
+	v_dptnum emp.empno%type;
+	v_dptname dept.dname%type;
+	v_dptloc dept.loc%type;
+
+BEGIN
+	select max(hiredate)
+	into v_maxhiredate
+	from emp;
+
+	select deptno
+	into v_dptnum
+	from emp
+	where hiredate = v_maxhiredate;
+
+	select dname, loc
+	into v_dptname, v_dptloc
+	from dept
+	where deptno = v_dptnum;
+
+
+	dbms_output.put_line( 'DPTNUM: ' || to_char(v_dptnum) || '   DPTNAME: ' || to_char(v_dptname) || '   DPTLOC: ' || to_char(v_dptloc) );
+	DBMS_OUTPUT.NEW_LINE;
+	dbms_output.put_line('DIA: ' || to_char(v_maxhiredate) );
+
+END;
+/
+
+
+OU ----------------------------------------------------------------------------------------------
+
+DECLARE
+	v_dname  dept.dname%type;
+	v_loc dept.loc%type
+
+BEGIN
+	select dname, loc
+	into v_dname, v_loc
+	from dept
+	where detpno = (select deptno
+			from emp
+			where hiredate = (select max(hiredate) from emp));
+
+
+END;
+
+
+
+Exercício 3.C
+
+DECLARE
+	v_nome    emp.ename%type;
+	v_cargo   emp.job%type;
+	v_salario emp.sal%type;
+	v_loc     dept.loc%type;
+
+
+BEGIN
+	select ename, job, sal
+	into v_nome, v_cargo, v_salario
+	from emp
+	where sal between 4000 and 6000;
+
+	select loc 
+	into v_loc
+	from dept
+	where deptno = (select deptno 
+			from emp
+			where sal = v_salario); 
+
+	dbms_output.put_line( 'NAME: ' || to_char(v_nome) || '   CARGO: ' || to_char(v_cargo) || '   SALARIO: ' || to_char(v_salario) );
+	DBMS_OUTPUT.NEW_LINE;
+	dbms_output.put_line('LOCALIZACAO: ' || to_char(v_loc) );
+
+END;
+/
+
+OU -----------------------------------------------------------------------------
+
+
+DECLARE
+	v_nome    emp.ename%type;
+	v_cargo   emp.job%type;
+	v_salario emp.sal%type;
+
+	v_deptno  dept.deptno%type;
+	v_loc     dept.loc%type;
+
+
+BEGIN
+	select ename, job, sal, deptno
+	into v_nome, v_cargo, v_salario, v_deptno
+	from emp
+	where sal between 4000 and 6000;
+
+	select loc
+	into v_loc
+	from dept
+	where deptno = v_deptno;
+	
+			
+	dbms_output.put_line( 'NAME: ' || to_char(v_nome) || '   CARGO: ' || to_char(v_cargo) || '   SALARIO: ' || to_char(v_salario) );
+	DBMS_OUTPUT.NEW_LINE;
+	dbms_output.put_line('LOCALIZACAO: ' || to_char(v_loc) );
+
+END;
+/
+
+OU -----------------------------------------------------------------------------
+
+
+DECLARE
+	v_nome    emp.ename%type;
+	v_cargo   emp.job%type;
+	v_salario emp.sal%type;
+
+	v_deptno  dept.deptno%type;
+	v_loc     dept.loc%type;
+
+
+BEGIN
+	select e.ename, e.job, e.sal, e.deptno, d.loc
+	into v_nome, v_cargo, v_salario, v_deptno, v_loc
+	from emp e, dept d
+	where 
+		e.deptno = d.deptno and
+		e.sal between 4000 and 6000;
+
+			
+	dbms_output.put_line( 'NAME: ' || to_char(v_nome) || '   CARGO: ' || to_char(v_cargo) || '   SALARIO: ' || to_char(v_salario) );
+	DBMS_OUTPUT.NEW_LINE;
+	dbms_output.put_line('LOCALIZACAO: ' || to_char(v_loc) );
+
+END;
+/
+

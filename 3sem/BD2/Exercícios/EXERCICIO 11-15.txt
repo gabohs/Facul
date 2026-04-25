@@ -1,0 +1,123 @@
+EXERCICIO 11
+
+BEGIN
+	update dept
+	set loc = 'DALLAS'
+	where dname = 'IT';
+
+	dbms_output.put_line('Foram Atualizadas ' || to_char(SQL%ROWCOUNT) || ' linhas');
+
+END;
+/
+
+
+EXERCICIO 12
+
+DECLARE
+	v_num dept.deptno%type;
+
+BEGIN
+	select deptno 
+	into v_num
+	from dept
+	where dname = 'RESEARCH';
+
+	-- ou v_num := v_num + 1 
+
+	insert into dept (deptno, dname, loc)
+	values (v_num + 1, 'PROJETO', 'ERECHIM');	
+
+	dbms_output.put_line('Novo dept inserido: ' || to_char(v_num + 1));
+
+	commit;
+
+END;
+/
+
+
+OU MELHOR:
+
+-- alter table dept modify (deptno NUMBER(3));
+
+BEGIN
+	insert into dept (deptno, dname, loc)
+	values (SEQ_DEPT.NEXTVAL, 'ENROLACAO', 'GAURAMA');	
+
+	commit;
+
+END;
+/
+
+
+
+EXERCICIO 13
+
+1. Criar a tabela auxiliar EMP_INS
+
+create table EMP_INS
+(
+	EMPNO number(4), 
+	DNAME varchar2(514), 
+	DATA  date, 
+	SAL   number(7,2)
+); 
+
+2. trigger
+
+CREATE OR REPLACE TRIGGER t_registra_empregado
+after insert on emp
+for each row
+DECLARE
+	v_dname dept.dname%type;
+
+BEGIN
+	select dname
+	into v_dname
+	from dept
+	where deptno = :new.deptno;
+
+	insert into emp_ins (EMPNO, DNAME, DATA, SAL)
+	values (:new.empno, v_dname, sysdate, :new.sal);
+
+END;
+/
+
+
+
+insert into emp (EMPNO, ENAME, JOB, MGR, HIREDATE, LEAVEDATE, SAL, COMM, DEPTNO)
+values (7935, 'PEDRO', 'MANAGER', 7839, sysdate, null, 3550, null, 10);
+
+
+
+EXERCICIO 14
+
+
+CREATE OR REPLACE FUNCTION f_media (p_empno emp.empno%type) RETURN NUMBER as
+	v_media number(7,2);
+BEGIN
+	select avg(sal)
+	into v_media
+	from emp
+	where deptno = (select deptno 
+			from emp 
+			where empno = p_empno);
+	RETURN v_media;
+END;
+/
+
+
+EXERCICIO 15
+
+CREATE OR REPLACE PROCEDURE p_atualiza_emp (p_dname dept.dname%type) as
+BEGIN
+	update emp
+	set func10 = 'S'
+	where deptno = (select deptno
+			from dept
+			where dname = p_dname) AND (hiredate < '02-apr-2016');
+
+
+END;
+/
+
+

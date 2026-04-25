@@ -1,0 +1,32 @@
+-- A diferença entre function e procedure eh q a function obrigatoriamente precisa retornar um valor. (ver exercício 5)
+
+```
+CREATE OR REPLACE FUNCTION f_menor_sal (v_job varchar2) RETURN NUMBER as
+	v_menor_sal number(7,2);
+BEGIN
+	select min(sal)
+	into v_menor_sal
+	from emp
+	where job = v_job;
+	RETURN v_menor_sal;
+END;
+/
+```
+
+EXERCICIO 5.A
+
+CREATE OR REPLACE FUNCTION f_media_sal_mgr( p_gerente emp.mgr%type ) RETURN NUMBER as
+	v_media_sal emp.sal%type;
+BEGIN
+	select avg(sal)
+	into v_media_sal
+	from emp
+	where mgr = p_gerente;
+
+	RETURN v_media_sal;
+
+END;
+/
+
+
+> para testar: select f_media_sal_mgr(7698) from dual;

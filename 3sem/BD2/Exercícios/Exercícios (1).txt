@@ -1,0 +1,55 @@
+===================================================================================================
+
+EXERCICIO 4.A
+
+CREATE OR REPLACE PROCEDURE info_funcionario(v_fnum emp.empno%type) as
+	v_name     emp.ename%type;
+	v_hiredate emp.hiredate%type;
+	v_loc      dept.loc%type;
+
+BEGIN
+	select e.ename, e.hiredate, d.loc
+	into v_name, v_hiredate, v_loc
+	from emp e, dept d
+	where
+		e.deptno = d.deptno AND 
+		e.empno = v_fnum;
+
+	dbms_output.put_line( 'Nome: ' || to_char(v_name) || ' - Contratacao: ' || to_char(v_hiredate) || ' - Loc: ' || to_char(v_loc) );
+
+END;
+/
+
+===================================================================================================
+
+===================================================================================================
+
+EXERCICIO 4.B
+
+CREATE OR REPLACE PROCEDURE p_menor_sal_cidade( p_ncidade dept.loc%type ) as
+	v_deptno  dept.deptno%type;
+	v_fnome   emp.ename%type;
+	v_salario emp.sal%type;
+
+BEGIN
+	select deptno 
+	into v_deptno
+	from dept
+	where loc = p_ncidade;
+
+	select MIN(sal)
+	into v_salario
+	from emp
+	where deptno = v_deptno;
+
+	select ename
+	into v_fnome
+	from emp
+	where sal = v_salario;
+
+	dbms_output.put_line( 'Nome: ' || to_char(v_fnome) || ' - Salario: ' || to_char(v_salario) );
+
+END;
+/
+
+===================================================================================================

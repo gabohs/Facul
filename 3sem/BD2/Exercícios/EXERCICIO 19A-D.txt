@@ -1,0 +1,106 @@
+create table retired_emps as 
+select * from emp 
+where rownum < 1;
+
+Isso cria a tabela retired_emps com a mesma estrutura da tabela emp. A tabela retired_emps eh criada vazia.
+
+----
+
+Exercício 19.A
+
+CREATE OR REPLACE PROCEDURE ClassificaEmp as
+	CURSOR emp_cursor IS 
+		select ename, sal from emp;	
+
+BEGIN
+	FOR emp_record IN emp_cursor
+	LOOP
+		IF emp_record.sal > 2500 THEN
+			DBMS_OUTPUT.PUT_LINE(to_char(emp_record.ename) ||': SALARIO ALTO');
+		ELSE
+			DBMS_OUTPUT.PUT_LINE(to_char(emp_record.ename) ||': SALARIO NORMAL');
+
+		END IF;
+		
+	END LOOP;
+
+END;
+/
+
+
+
+Exercício 19.B
+
+
+CREATE OR REPLACE PROCEDURE ClassificaEmp as
+	CURSOR emp_cursor IS 
+		select ename, sal from emp;	
+
+BEGIN
+	FOR emp_record IN emp_cursor
+	LOOP
+		IF emp_record.sal > 2500 THEN
+			DBMS_OUTPUT.PUT_LINE(to_char(emp_record.ename) ||': SALARIO ALTO');
+		ELSIF emp_record.sal > 1800 THEN
+			DBMS_OUTPUT.PUT_LINE(to_char(emp_record.ename) ||': SALARIO MEDIO');
+		ELSE
+			DBMS_OUTPUT.PUT_LINE(to_char(emp_record.ename) ||': SALARIO BAIXO');
+
+		END IF;
+		
+	END LOOP;
+
+END;
+/
+
+Exercício 19.C (deu errado ver dps)
+
+CREATE OR REPLACE PROCEDURE AumentaSalario(p_sal emp.sal%type ) as
+	CURSOR emp_cursor IS
+	select * from emp
+	where sal < p_sal;
+	
+	sal_novo emp.sal%type;
+
+BEGIN
+	FOR emp_record IN emp_cursor
+	LOOP
+		sal_novo := emp_record.sal * 1.1;
+
+		update emp 
+		set sal = sal_novo
+		where empno = emp_record.empno;
+
+		dbms_output.put_line('Cod: ' || emp_record.empno || 'Nome: ' || emp_record.ename || 'Antigo: ' || emp_record.sal || 'Novo: ' || sal_novo);
+
+	END LOOP; 
+	commit;
+
+END;
+/
+
+Exercício 19.D
+
+CREATE OR REPLACE PROCEDURE AumentaSalario(p_sal emp.sal%type, p_perc number ) as
+	CURSOR emp_cursor IS
+	select * from emp
+	where sal < p_sal;
+	
+	sal_novo emp.sal%type;
+
+BEGIN
+	FOR emp_record IN emp_cursor
+	LOOP
+		sal_novo := emp_record.sal * (p_perc / 100 + 1);
+
+		update emp 
+		set sal = sal_novo
+		where empno = emp_record.empno;
+
+		dbms_output.put_line('Cod: ' || emp_record.empno || 'Nome: ' || emp_record.ename || 'Antigo: ' || emp_record.sal || 'Novo: ' || sal_novo);
+
+	END LOOP; 
+	commit;
+
+END;
+/
