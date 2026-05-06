@@ -380,7 +380,7 @@ executada repetidamente.
 Functions são similares às procedures, mas **retornam um valor** escalar. Funções e procedimentos
 podem ser utilizadas/chamadas em scripts, diretamente pela console SQL ou mesmo em outros procedimentos e funções. As funções são úteis para realizar cálculos ou operações em dados e retornar um resultado específico. Obviamente, também podem aceitar parâmetros de entrada.
 
-> ![NOTE]
+> [!NOTE]
 > Ou seja, a diferença entre function e procedure é que a function obrigatoriamente precisa retornar um valor
 
 ### Triggers
