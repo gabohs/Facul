@@ -91,6 +91,8 @@ END;
 </details>
 
 
+<details>
+
 <summary>3.C</summary>
 
 ```sql
@@ -376,6 +378,8 @@ insert into emp (EMPNO, ENAME, JOB, MGR, HIREDATE, LEAVEDATE, SAL, COMM, DEPTNO)
 
 </details>
 
+<details>
+
 <summary>14</summary>
 
 ```sql
@@ -395,6 +399,8 @@ END;
 
 </details>
 
+<details>
+
 <summary>15</summary>
 
 ```sql
@@ -410,6 +416,8 @@ END;
 ```
 
 </details>
+
+<details>
 
 <summary>19.A</summary>
 
@@ -444,7 +452,7 @@ END;
 
 </details>
 
-</details>
+<details>
 
 <summary>19.B</summary>
 
@@ -470,8 +478,7 @@ END;
 
 </details>
 
-
-</details>
+<details>
 
 <summary>19.C</summary>
 
@@ -502,7 +509,7 @@ END;
 
 </details>
 
-</details>
+<details>
 
 <summary>19.D</summary>
 
@@ -532,6 +539,8 @@ END;
 ```
 
 </details>
+
+<details>
 
 <summary>22.A</summary>
 
@@ -568,7 +577,7 @@ END;
 
 </details>
 
-</details>
+<details>
 
 <summary>22.B</summary>
 
@@ -583,8 +592,7 @@ ORA-06512: at line 1
 
 </details>
 
-
-</details>
+<details>
 
 <summary>22.C</summary>
 
@@ -627,9 +635,7 @@ END;
 
 </details>
 
-
-
-</details>
+<details>
 
 <summary>22.D</summary>
 
