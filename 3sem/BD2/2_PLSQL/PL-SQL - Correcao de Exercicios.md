@@ -245,6 +245,32 @@ END;
 /
 ```
 
+#### OU
+
+```sql
+CREATE OR REPLACE PROCEDURE p_menor_sal_cidade(v_loc dept.loc%type) as
+    v_nome emp.ename%type;
+    v_sal emp.sal%type;
+    
+BEGIN
+    select MIN(sal) 
+    into v_sal
+    from emp
+    where deptno = ( select deptno 
+                     from dept
+                     where loc = v_loc   );
+
+    select ename
+    into v_nome
+    from emp
+    where sal = v_sal; 
+
+	dbms_output.put_line( 'Nome: ' || to_char(v_nome) || ' - Salario: ' || to_char(v_sal) );
+
+END;
+/
+```
+
 </details>
 
 <details>
