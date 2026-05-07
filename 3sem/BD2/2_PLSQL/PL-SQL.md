@@ -1,5 +1,102 @@
 # Exercício sobre a linguagem PL-SQL
 
+- [Blocos PL-SQL](#blocos-pl-sql)
+  - [Declarando variáveis em PL-SQL](#declarando-variáveis-em-pl-sql)
+  - [Tipos de dados básicos](#tipos-de-dados-básicos)
+  - [O atributo %TYPE](#o-atributo-type)
+  - [Variáveis do tipo LOB](#variáveis-do-tipo-lob-large-objects)
+  - [Instruções SELECT em PL-SQL](#instruções-select-em-pl-sql)
+
+- [Exercícios Iniciais](#exercícios-iniciais)
+  - [Exercício 1](#exercício-1)
+  - [Exercício 2](#exercício-2)
+  - [Exercício 3](#exercício-3)
+    - [Exercício 3.A](#exercício-3a)
+    - [Exercício 3.B](#exercício-3b)
+    - [Exercício 3.C](#exercício-3c)
+
+- [Manipulação de Dados](#manipulação-de-dados)
+  - [Inserindo Dados](#inserindo-dados)
+  - [Atualizando Dados](#atualizando-dados)
+  - [Excluindo Dados](#excluindo-dados)
+  - [Instruções COMMIT e ROLLBACK](#instruções-commit-e-rollback)
+
+- [Procedures, Functions e Triggers](#procedures-functions-e-triggers)
+  - [Procedures](#procedures)
+    - [Exercício 4](#exercício-4)
+    - [Exercício 4.A](#exercício-4a)
+    - [Exercício 4.B](#exercício-4b)
+  - [Functions](#functions)
+    - [Exercício 5](#exercício-5)
+    - [Exercício 5.A](#exercício-5a)
+  - [Triggers](#triggers)
+    - [Exercício 6](#exercício-6)
+    - [Exercício 7](#exercício-7)
+    - [Exercício 8](#exercício-8)
+
+- [Cursores SQL](#cursores-sql)
+  - [Cursores Implícitos](#cursores-implícitos)
+    - [Atributos de um cursor SQL](#atributos-de-um-cursor-sql)
+    - [Exercício 9](#exercício-9)
+    - [Exercício 10](#exercício-10)
+    - [Exercício 11](#exercício-11)
+    - [Exercício 12](#exercício-12)
+    - [Exercício 13](#exercício-13)
+    - [Exercício 14](#exercício-14)
+    - [Exercício 15](#exercício-15)
+
+- [Estruturas de Controle](#estruturas-de-controle)
+  - [Instruções IF](#instruções-if)
+  - [Loops](#loops)
+    - [Loop Básico](#loop-básico)
+    - [Loop FOR](#loop-for)
+    - [Loop WHILE](#loop-while)
+
+- [O atributo %ROWTYPE](#o-atributo-rowtype)
+  - [Vantagens do uso do atributo %ROWTYPE](#vantagens-do-uso-do-atributo-rowtype)
+  - [Exercício 16](#exercício-16)
+
+- [Cursores Explícitos](#cursores-explícitos)
+  - [Declarando um cursor explícito](#declarando-um-cursor-explícito)
+  - [Abrindo um cursor](#abrindo-um-cursor)
+  - [Extraindo dados de um cursor](#extraindo-dados-de-um-cursor)
+  - [Fechando o cursor](#fechando-o-cursor)
+  - [Exercício 17](#exercício-17)
+
+- [Atributos de Cursores](#atributos-de-cursores)
+  - [O atributo %ISOPEN](#o-atributo-isopen)
+  - [Os atributos %NOTFOUND e %ROWCOUNT](#os-atributos-notfound-e-rowcount)
+
+- [Cursores com Registros](#cursores-com-registros)
+  - [Exercício 18](#exercício-18)
+
+- [Loops FOR de Cursores](#loops-for-de-cursores)
+  - [Loops FOR usando Subconsultas](#loops-for-de-cursores-usando-subconsultas)
+    - [Exercício 19](#exercício-19)
+    - [Exercício 19.A](#exercício-19a)
+    - [Exercício 19.B](#exercício-19b)
+    - [Exercício 19.C](#exercício-19c)
+    - [Exercício 19.D](#exercício-19d)
+
+- [Cursores com Parâmetros](#cursores-com-parâmetros)
+
+- [Cláusula FOR UPDATE](#cláusula-for-update)
+
+- [Cursores com Subconsultas](#cursores-com-subconsultas)
+  - [Exercício 20](#exercício-20)
+
+- [Tratando Exceções](#tratando-exceções)
+  - [Sintaxe](#sintaxe)
+  - [Algumas exceções pré-definidas](#algumas-exceções-pré-definidas)
+  - [Exercício 21](#exercício-21)
+  - [Exercício 22](#exercício-22)
+    - [Exercício 22.A](#exercício-22a)
+    - [Exercício 22.B](#exercício-22b)
+    - [Exercício 22.C](#exercício-22c)
+    - [Exercício 22.D](#exercício-22d)
+
+- [Referências](#referências)
+
 ## Blocos PL-SQL
 
 ```sql
@@ -580,13 +677,13 @@ podemos, para isso, criar o que chamamos de gatilho (trigger). Obs.: a trigger c
 Apesar de ser de fácil compreensão, falaremos um pouco mais sobre isso logo adiante neste documento.
 
 ```sql
-create table ATUALIZACOES_SALARIOS
+create table ATUALIZACOES_SALARIOS 
 (
-empno number(4),
-ename varchar2(10),
-sal_antes number(7,2),
-sal_depois number(7,2),
-data_alteracao date
+    empno number(4),
+    ename varchar2(10),
+    sal_antes number(7,2),
+    sal_depois number(7,2),
+    data_alteracao date
 );
 ```
 
@@ -643,11 +740,11 @@ Recrie a tabela e repita o update:
 ```sql
 create table ATUALIZACOES_SALARIOS
 (
-empno number(4),
-ename varchar2(10),
-sal_antes number(7,2),
-sal_depois number(7,2),
-data_alteracao date
+    empno number(4),
+    ename varchar2(10),
+    sal_antes number(7,2),
+    sal_depois number(7,2),
+    data_alteracao date
 );
 ```
 
@@ -693,11 +790,11 @@ show errors
 ```sql
 create table ATUALIZACOES_SALARIOS
 (
-empno number(4),
-ename varchar2(10),
-sal_antes number(7,2),
-sal_depois number(7,2),
-data_alteracao date
+    empno number(4),
+    ename varchar2(10),
+    sal_antes number(7,2),
+    sal_depois number(7,2),
+    data_alteracao date
 );
 ```
 
