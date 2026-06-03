@@ -23,19 +23,27 @@ public class Tela extends javax.swing.JFrame
                         throw new Exception("Vetor cheio");
                 
                     String nome = tfdNome.getText();
+                    
+                    if (nome.isEmpty())
+                        throw new Exception("Campo `Nome` vazio");
+                    
                     double preco = Double.parseDouble(tfdPreco.getText());
+                    
+                    if (preco <= 0)
+                        throw new Exception("O preco deve ser maior que 0");
 
                     Produto p = new Produto(nome, preco);
                     produtos[qtd] = p;
                     qtd++;
 
                     JOptionPane.showMessageDialog(null, "Produto Cadastrado!");
+                    tfdNome.setText("");
+                    tfdPreco.setText("");
                 } 
                 catch (Exception ex)
                 {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
-                
             }    
         });
         
@@ -47,6 +55,52 @@ public class Tela extends javax.swing.JFrame
                 for (int i = 0; i < qtd; i++)
                 {
                     txaLista.append(produtos[i].mostrarDados() + "\n");
+                }
+            }    
+        });
+        
+        btnPesquisar.addActionListener( new ActionListener() {  
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                String nomeBusca = tfdNome.getText();
+                boolean encontrado = false;
+                
+                String resultado = "";
+                
+                for (int i = 0; i < qtd; i++)
+                {
+                    if (produtos[i].getNome().contains(nomeBusca))
+                    {
+                        resultado += produtos[i].mostrarDados() + "\n";
+                        encontrado = true;
+                    }
+                }
+                
+                if (encontrado)
+                    JOptionPane.showMessageDialog(null, resultado);
+                else
+                    JOptionPane.showMessageDialog(null, "Nenhum produto encontrado");
+            }    
+        });
+        
+        btnRemover.addActionListener( new ActionListener() {  
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                String nomeRemover = tfdNome.getText();
+                
+                for (int i = 0; i < qtd; i++)
+                {
+                    if (produtos[i].getNome().contains(nomeRemover))
+                    {
+                        for (int j = i; j < qtd - 1; j++)
+                            produtos[j] = produtos[j + 1];
+                    }
+                    
+                    qtd--;
+                    JOptionPane.showMessageDialog(null, "Produto removido");
+                    return;
                 }
             }    
         });
@@ -65,6 +119,8 @@ public class Tela extends javax.swing.JFrame
         btnListar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txaLista = new javax.swing.JTextArea();
+        btnPesquisar = new javax.swing.JButton();
+        btnRemover = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de Produtos");
@@ -89,6 +145,11 @@ public class Tela extends javax.swing.JFrame
         txaLista.setRows(5);
         jScrollPane1.setViewportView(txaLista);
 
+        btnPesquisar.setText("Pesquisar");
+
+        btnRemover.setBackground(new java.awt.Color(255, 86, 86));
+        btnRemover.setText("Remover");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -96,8 +157,8 @@ public class Tela extends javax.swing.JFrame
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(78, 78, 78)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel2))
                         .addGap(18, 18, 18)
@@ -105,20 +166,24 @@ public class Tela extends javax.swing.JFrame
                             .addComponent(tfdPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(332, 332, 332)
-                        .addComponent(btnCadastrar)))
-                .addContainerGap(96, Short.MAX_VALUE))
+                        .addGap(191, 191, 191)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnCadastrar)
+                                .addGap(138, 138, 138))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(btnListar)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(btnPesquisar)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnRemover))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(88, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(163, 163, 163))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnListar))
-                        .addGap(173, 173, 173))))
+                .addComponent(jLabel1)
+                .addGap(163, 163, 163))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,10 +198,13 @@ public class Tela extends javax.swing.JFrame
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(tfdPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
-                .addComponent(btnCadastrar)
                 .addGap(45, 45, 45)
-                .addComponent(btnListar)
+                .addComponent(btnCadastrar)
+                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnListar)
+                    .addComponent(btnPesquisar)
+                    .addComponent(btnRemover))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(57, Short.MAX_VALUE))
@@ -172,6 +240,8 @@ public class Tela extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnListar;
+    private javax.swing.JButton btnPesquisar;
+    private javax.swing.JButton btnRemover;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
