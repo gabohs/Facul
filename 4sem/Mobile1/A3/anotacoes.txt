@@ -1,0 +1,6 @@
+criar projeto react
+
+Mais atual com vite: npm create vite@latest
+
+
+Mais antigo: npx create-react-app

@@ -1,0 +1,46 @@
+METODOS
+
+    Equivalentes as plantas baixas, esquemas eletricos, desenhos mecanicos...
+    Na eng. de software, se fazem modelos (por isso dizemos modelagem de sistemas)
+        Produzimos uma representacao da realidade para se fazer planejamento, testar coneitos, calcular e estimar
+        variaveis, minimzar erros, etc
+        
+    Um metodo descreve um sistema de forma a minimizar ao max. a ambiguidade presente na comunicacao durante o    
+    processo de desenvolvimento. Eh um conjunto de notacoes + passos + processos para se desenvolver sistemas
+    Metodo = processo + notacao grafica
+    
+    
+UML
+
+    Linguagem de modelagem (NAO EH UMA LINGUAGEM DE PROGRAMACAO) padrao para visualizar, construir, especificar e documentar os artefatos de um sistema de software.
+    
+    UML combina o melhor de
+        - conceitos de modelagem de dados (diagramas entidade-relacionamento)
+        - modelagem de negocios
+        - modelagem de objetos
+        - modelagem de componentes
+        
+        
+DIAGRAMAS
+
+    Visao do modelo apresentado na perspectiva de um patrocinar em particular, fornece uma representacao parcial do sistema e eh semanticamente consistente com outras visoes. Na UML, ha 9 diagramas padrao. 
+    Visao estatica: casos de uso, classes, objetos, componentes e distribuicao - visao estrutural do sistema
+    Visao dinamica: sequencia, colaboracao, maquinas de estado e atividades
+       
+       
+    CASOS DE USO
+        Requisitos funcionais, visao de negocios, interacao com o usuario
+        
+        
+COMPONENTES DO MODELO DE CASOS DE USO
+
+
+Atores: representam qualquer entidade que precise interagir com o sistema (enviar e receber mensagens do sistema). O ator eh uma classe, nao uma instancia. 
+Uma maneira prática de identificar os atores élevantando os papéis dos usuários e dos sistemas externos
+
+
+
+
+
+
+      
