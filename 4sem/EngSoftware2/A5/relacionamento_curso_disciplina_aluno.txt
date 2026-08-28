@@ -1,0 +1,7 @@
+- Um curso pode ter 1 ou mais disciplinas
+- A disciplina pertence ao curso
+
+- Uma disciplina pode ter de 3 a 10 alunos
+- Um aluno pode cursar de 0 a n disciplinas
+
+
