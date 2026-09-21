@@ -1,0 +1,5 @@
+Um administrador de redes vai organizar a estrutura dos laboratórios e setores da instituição em 6 sub-redes diferentes. Irá utilizar o bloco privado 10.0.0.0/8 sub-dividido com uma máscara de sub-rede /20 (20 bits para a rede). As demais sub-redes (que são muito mais do que 6, não serão utilizadas no momento). Para as 6 primeiras sub-redes, demonstre e apresente:
+- O número IP da rede
+- O número IP de broadcast (difusão)
+- A máscara de rede (em notação decimal pontuada)
+- A faixa de endereços IP válidos (disponíveis para hosts)
