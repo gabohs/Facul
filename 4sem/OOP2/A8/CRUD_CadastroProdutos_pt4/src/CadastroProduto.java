@@ -6,7 +6,6 @@ import javax.swing.JOptionPane;
 
 public class CadastroProduto extends javax.swing.JInternalFrame implements ActionListener
 {
-    
     String[] categorias = {"Informatica", "Eletronicos", "Moveis", "Material de Escritorio", "Eletrodomesticos"};
     DefaultComboBoxModel mcategoria = new DefaultComboBoxModel();
     
@@ -205,8 +204,6 @@ public class CadastroProduto extends javax.swing.JInternalFrame implements Actio
                 cbSituacao.setSelected(true);
             else
                 cbSituacao.setSelected(false);
-            
-
         } 
         catch (Exception erro)
         {
@@ -214,7 +211,6 @@ public class CadastroProduto extends javax.swing.JInternalFrame implements Actio
         }
     }
  
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

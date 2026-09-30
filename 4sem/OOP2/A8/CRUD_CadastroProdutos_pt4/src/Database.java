@@ -98,14 +98,13 @@ public class Database
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery("SELECT id, nome FROM funcionario");
             while (rs.next()) {
-            int codigo = rs.getInt("id");
-            String nom = rs.getString("nome");
-            System.out.println(codigo + " "+ nom);
+                int codigo = rs.getInt("id");
+                String nom = rs.getString("nome");
+                System.out.println(codigo + " "+ nom);
             }
             JOptionPane.showMessageDialog(null,"Consulta realizada com sucesso");
             rs.close();
             st.close();
-            conn.close();
             conn.close();
         }
         catch (ClassNotFoundException ex) 
