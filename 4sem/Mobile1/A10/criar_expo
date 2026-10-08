@@ -1,0 +1,10 @@
+Criar projeto do zero com Expo.
+
+npx create-expo-app nome
+
+Se quiser templates:
+
+npx create-expo-app nome --template nomedotemplate
+
+
+npm start

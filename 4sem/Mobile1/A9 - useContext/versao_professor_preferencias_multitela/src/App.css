@@ -1,0 +1,158 @@
+.App {
+  min-height: 100vh;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  color: #202124;
+  background: #f5f5f5;
+  font-size: var(--font-size);
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.theme-dark {
+  color: #f1f3f4;
+  background: #202124;
+}
+
+.top-navigation ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation-button,
+.setting-control button,
+.color-option,
+.reset-button {
+  border: 0;
+  border-radius: 0.5rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.navigation-button {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  color: inherit;
+  background: transparent;
+  transition: background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.navigation-button:hover,
+.navigation-button[aria-current='page'] {
+  color: #fff;
+  background: var(--accent-color);
+  box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+}
+
+.navigation-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: none;
+}
+
+.settings-panel {
+  max-width: 56rem;
+  margin: 1.5rem auto 0;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 14%);
+}
+
+.theme-dark .settings-panel {
+  background: #303134;
+}
+
+.settings-panel h1 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.settings-panel section > p {
+  margin-bottom: 1.25rem;
+}
+
+.setting-control,
+.color-options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.setting-control button,
+.reset-button {
+  min-height: 2.75rem;
+  padding: 0.65rem 1rem;
+  color: #fff;
+  background: var(--accent-color);
+}
+
+.setting-control button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.setting-control button[aria-pressed='true'] {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.setting-control output {
+  min-width: 3.5rem;
+  text-align: center;
+}
+
+.font-preview {
+  font-size: 1em;
+}
+
+.color-options {
+  margin: 1rem 0;
+}
+
+.color-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  color: inherit;
+  background: transparent;
+  outline: 1px solid #9aa0a6;
+}
+
+.color-option[aria-pressed='true'] {
+  outline: 2px solid var(--accent-color);
+}
+
+.color-swatch {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+
+.accent-preview {
+  color: var(--accent-color);
+}
+
+button:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 1rem;
+  }
+
+  .settings-panel {
+    padding: 1.25rem;
+  }
+}
