@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>LimitedLineBuffer.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.java-string-literal {color: #99006b}
+.java-layer-method {font-family: Monospaced; font-weight: bold}
+.java-keywords {color: #000099; font-family: Monospaced; font-weight: bold}
+.java-numeric-literals {color: #780000}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\Documents and Settings\adario\Meus documentos\URI\Graduacao\35336_SO1\Extras\ProdCons\src\LimitedLineBuffer.java</td></tr></table>
+<pre>
+<span class="java-keywords">import</span> java.util.*;
+
+<span class="java-keywords">public</span> <span class="java-keywords">class</span> LimitedLineBuffer {
+   <span class="java-keywords">private</span> LinkedList&lt;String&gt; queue;
+   <span class="java-keywords">private</span> <span class="java-keywords">int</span> tamanho;
+
+   <span class="java-keywords">public</span> <span class="java-layer-method">LimitedLineBuffer</span>(<span class="java-keywords">int</span> size) {
+      queue = <span class="java-keywords">new</span> LinkedList&lt;String&gt;();
+      tamanho = size;
+   }
+
+   <span class="java-keywords">public</span> <span class="java-keywords">synchronized</span> <span class="java-keywords">void</span> <span class="java-layer-method">put</span>(String line) {
+      <span class="java-keywords">while</span>(queue.<span class="java-layer-method">size</span>() == tamanho) {
+         System.out.<span class="java-layer-method">println</span>(<span class="java-string-literal">&quot;Buffer cheio!!!&quot;</span>);
+         <span class="java-keywords">try</span> {
+            <span class="java-keywords">this</span>.<span class="java-layer-method">wait</span>();
+         } <span class="java-keywords">catch</span> (InterruptedException e) {
+            <span class="java-keywords">this</span>.<span class="java-layer-method">notify</span>();
+            <span class="java-keywords">return</span>;
+         }
+      }
+      queue.<span class="java-layer-method">add</span>(<span class="java-keywords">new</span> <span class="java-layer-method">String</span>(line));
+      <span class="java-keywords">this</span>.<span class="java-layer-method">notify</span>();
+  }
+
+   <span class="java-keywords">public</span> <span class="java-keywords">synchronized</span> String <span class="java-layer-method">get</span>() {
+      <span class="java-keywords">while</span>(queue.<span class="java-layer-method">size</span>() == <span class="java-numeric-literals">0</span>) {
+         System.out.<span class="java-layer-method">println</span>(<span class="java-string-literal">&quot;Buffer vazio!!!&quot;</span>);
+         <span class="java-keywords">try</span> {
+            <span class="java-keywords">this</span>.<span class="java-layer-method">wait</span>();
+         } <span class="java-keywords">catch</span> (InterruptedException e) {
+            <span class="java-keywords">this</span>.<span class="java-layer-method">notify</span>();
+            <span class="java-keywords">return</span> <span class="java-keywords">null</span>;
+         }
+      }
+      <span class="java-keywords">this</span>.<span class="java-layer-method">notify</span>();
+      <span class="java-keywords">return</span> queue.<span class="java-layer-method">removeFirst</span>();
+   }
+}
+
+
+</pre></body>
+</html>

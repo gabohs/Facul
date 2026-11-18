@@ -1,0 +1,102 @@
+[
+  {
+    "nome": "Ana Silva",
+    "cidade": "São Paulo",
+    "avatarURL": "https://randomuser.me/api/portraits/women/1.jpg"
+  },
+  {
+    "nome": "Carlos Eduardo",
+    "cidade": "Rio de Janeiro",
+    "avatarURL": "https://randomuser.me/api/portraits/men/1.jpg"
+  },
+  {
+    "nome": "Mariana Souza",
+    "cidade": "Belo Horizonte",
+    "avatarURL": "https://randomuser.me/api/portraits/women/2.jpg"
+  },
+  {
+    "nome": "Lucas Santos",
+    "cidade": "Curitiba",
+    "avatarURL": "https://randomuser.me/api/portraits/men/2.jpg"
+  },
+  {
+    "nome": "Beatriz Lima",
+    "cidade": "Porto Alegre",
+    "avatarURL": "https://randomuser.me/api/portraits/women/3.jpg"
+  },
+  {
+    "nome": "Rafael Oliveira",
+    "cidade": "Salvador",
+    "avatarURL": "https://randomuser.me/api/portraits/men/3.jpg"
+  },
+  {
+    "nome": "Camila Pereira",
+    "cidade": "Recife",
+    "avatarURL": "https://randomuser.me/api/portraits/women/4.jpg"
+  },
+  {
+    "nome": "Gabriel Rodrigues",
+    "cidade": "Fortaleza",
+    "avatarURL": "https://randomuser.me/api/portraits/men/4.jpg"
+  },
+  {
+    "nome": "Juliana Costa",
+    "cidade": "Brasília",
+    "avatarURL": "https://randomuser.me/api/portraits/women/5.jpg"
+  },
+  {
+    "nome": "Thiago Alves",
+    "cidade": "Manaus",
+    "avatarURL": "https://randomuser.me/api/portraits/men/5.jpg"
+  },
+  {
+    "nome": "Fernanda Martins",
+    "cidade": "Florianópolis",
+    "avatarURL": "https://randomuser.me/api/portraits/women/6.jpg"
+  },
+  {
+    "nome": "Bruno Carvalho",
+    "cidade": "Goiânia",
+    "avatarURL": "https://randomuser.me/api/portraits/men/6.jpg"
+  },
+  {
+    "nome": "Larissa Ferreira",
+    "cidade": "Belém",
+    "avatarURL": "https://randomuser.me/api/portraits/women/7.jpg"
+  },
+  {
+    "nome": "Diego Ribeiro",
+    "cidade": "Vitória",
+    "avatarURL": "https://randomuser.me/api/portraits/men/7.jpg"
+  },
+  {
+    "nome": "Amanda Rocha",
+    "cidade": "Natal",
+    "avatarURL": "https://randomuser.me/api/portraits/women/8.jpg"
+  },
+  {
+    "nome": "Felipe Mendes",
+    "cidade": "João Pessoa",
+    "avatarURL": "https://randomuser.me/api/portraits/men/8.jpg"
+  },
+  {
+    "nome": "Patricia Gomes",
+    "cidade": "Maceió",
+    "avatarURL": "https://randomuser.me/api/portraits/women/9.jpg"
+  },
+  {
+    "nome": "Rodrigo Araujo",
+    "cidade": "Teresina",
+    "avatarURL": "https://randomuser.me/api/portraits/men/9.jpg"
+  },
+  {
+    "nome": "Vanessa Barbosa",
+    "cidade": "Campo Grande",
+    "avatarURL": "https://randomuser.me/api/portraits/women/10.jpg"
+  },
+  {
+    "nome": "Gustavo Cardoso",
+    "cidade": "Cuiabá",
+    "avatarURL": "https://randomuser.me/api/portraits/men/10.jpg"
+  }
+]

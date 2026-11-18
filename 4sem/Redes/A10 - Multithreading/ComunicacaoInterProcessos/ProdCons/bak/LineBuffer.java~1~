@@ -1,0 +1,49 @@
+import java.util.*;
+
+/**
+ * <P>Esta classe implementa um buffer para as linhas que normalmente serão
+ * lidas do teclado. Os métodos de inclusão e retirada da lista são sincronizados
+ * para explicitar a concorrência inerente das atividades.
+ * @author Alexandro Magno dos Santos Adário
+ * @version 1.0
+ */
+public class LineBuffer {
+//   private LinkedList<String> queue;
+   private LinkedList queue;
+
+/**
+ * Cria uma lista encadeada vazia que sera usada como fila para o buffer de linhas.
+ */
+   public LineBuffer() {
+      queue = new LinkedList();
+   }
+
+/**
+ * Insere uma linha no buffer.
+ * @param line Linha a ser inserida no buffer
+ */
+   public synchronized void put(String line) {
+      String strObj = new String(line);
+      queue.add(strObj);
+      this.notify();
+  }
+
+/**
+ * Retira e retorna uma linha do buffer. É um método bloqueante se o buffer
+ * estiver vazio, aguardando a existência de uma linha.
+ * @return A linha do início da fila do buffer
+ */
+   public synchronized String get() {
+      String linha;
+      while(queue.size() == 0) {
+         try {
+            this.wait();
+         } catch (InterruptedException e) {
+            this.notify();
+            return null;
+         }
+      }
+      linha = (String) queue.removeFirst();
+      return linha;
+   }
+}

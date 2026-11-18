@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>TestThreads.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.java-string-literal {color: #99006b}
+.java-layer-method {font-family: Monospaced; font-weight: bold}
+.java-keywords {color: #000099; font-family: Monospaced; font-weight: bold}
+.java-numeric-literals {color: #780000}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\Documents and Settings\adario\Meus documentos\URI\Graduacao\35336_SO1\Extras\ProdCons\src\TestThreads.java</td></tr></table>
+<pre>
+<span class="java-keywords">import</span> java.io.*;
+
+<span class="java-keywords">public</span> <span class="java-keywords">class</span> TestThreads {
+   <span class="java-keywords">public</span> <span class="java-keywords">static</span> <span class="java-keywords">void</span> <span class="java-layer-method">main</span>(String[] args) {
+      LimitedLineBuffer meuBuffer = <span class="java-keywords">new</span> <span class="java-layer-method">LimitedLineBuffer</span>(<span class="java-numeric-literals">10</span>);
+
+      Produtor P1 = <span class="java-keywords">new</span> <span class="java-layer-method">Produtor</span>(meuBuffer);
+      Consumidor C1 = <span class="java-keywords">new</span> <span class="java-layer-method">Consumidor</span>(meuBuffer);
+      Thread tp = <span class="java-keywords">new</span> <span class="java-layer-method">Thread</span>(P1, <span class="java-string-literal">&quot;Produtor de linhas&quot;</span>);
+      Thread tc = <span class="java-keywords">new</span> <span class="java-layer-method">Thread</span>(C1, <span class="java-string-literal">&quot;Consumidor de Linhas&quot;</span>);
+      
+      <span class="java-keywords">try</span> {
+         tp.<span class="java-layer-method">start</span>();
+         tc.<span class="java-layer-method">start</span>();
+         tp.<span class="java-layer-method">join</span>();
+      } <span class="java-keywords">catch</span> (InterruptedException e) {
+         P1.<span class="java-layer-method">stopRunning</span>();
+         tc.<span class="java-layer-method">interrupt</span>();
+         e.<span class="java-layer-method">printStackTrace</span>();
+      } <span class="java-keywords">finally</span> {
+         C1.<span class="java-layer-method">stopRunning</span>();
+         tc.<span class="java-layer-method">interrupt</span>();
+      }
+      <span class="java-keywords">return</span>;
+   }
+}
+
+</pre></body>
+</html>

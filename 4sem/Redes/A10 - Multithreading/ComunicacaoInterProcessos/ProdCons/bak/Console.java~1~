@@ -1,0 +1,61 @@
+import java.io.*;
+import java.lang.String;
+
+/**
+ * <P>Esta classe empacota a console (teclado + video) a fim de permitir
+ * acesso sincronizado à mesma por distintas threads.</P>
+ * <P>A classe Console implementa o padrão Singleton, para evitar que mais de
+ * uma uma console seja instanciada, o que permitiria que vários objetos
+ * tentassem utilizá-la sem a devida sincronização</P>
+ * @see #getConsole()
+ * @author Alexandro Magno dos Santos Adário
+ * @version 1.0
+ */
+public class Console {
+   private InputStreamReader ir;
+   private BufferedReader in;
+   private static Console instance = new Console();
+
+/**
+ * Esse método dá acesso à instância única da classe que pode ser criada. Não
+ * é possível criá-la usando {@code new Console()}.<BR>
+ * Exemplo de uso:<BR>
+ * {@code Console minhaConsole = Console.getConsole();}
+ * @return A instáncia única da classe Console.
+ */
+   public static Console getConsole() {
+      return instance;
+   }
+
+   private Console() {
+      ir = new InputStreamReader(System.in);
+      in = new BufferedReader(ir);
+   }
+// Fim do Código referente ao padrão Singleton
+
+/**
+ * Faz a leitura de uma linha do teclado.
+ * Esse método é sincronizado.
+ * @return Uma string referente à seqüência de caracteres lidos até um enter.
+ * @see #showLine(String message)
+ */
+   public synchronized String getLine() {
+      String linha = new String();
+      try {
+         linha = in.readLine();
+      } catch (IOException e) {
+         e.printStackTrace();
+      }
+      return linha;
+   }
+
+/**
+ * Exibe uma mensagem no vídeo.
+ * Esse método é sincronizado.
+ * @param message É a mensagem a ser exibida no vídeo.
+ * @see #getLine()
+ */
+   public synchronized void showLine(String message) {
+      System.out.println(message);
+   }
+}

@@ -1,0 +1,12 @@
+/*************************************************************************
+ * Estende RuntimeException por ser uma excecao não-verificada, que poderia
+ * ter sido evitada pelo programador antes de chamar SyncFileManager, por
+ * exemplo
+ **************************************************************************/
+
+public class DuplicateFileManagerException
+   extends RuntimeException {
+   public DuplicateFileManagerException(String nomearq) {
+      super( new String("\nCannot create another manager for file " + nomearq));
+   }
+}

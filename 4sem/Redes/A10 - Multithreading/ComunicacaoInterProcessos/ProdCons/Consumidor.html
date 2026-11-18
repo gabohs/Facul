@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Consumidor.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.java-layer-method {font-family: Monospaced; font-weight: bold}
+.java-keywords {color: #000099; font-family: Monospaced; font-weight: bold}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\Documents and Settings\adario\Meus documentos\URI\Graduacao\35336_SO1\Extras\ProdCons\src\Consumidor.java</td></tr></table>
+<pre>
+<span class="java-keywords">import</span> java.io.*;
+
+<span class="java-keywords">public</span> <span class="java-keywords">class</span> Consumidor <span class="java-keywords">extends</span> Thread {
+   <span class="java-keywords">private</span> LimitedLineBuffer meuBuffer;
+   <span class="java-keywords">private</span> <span class="java-keywords">boolean</span> mustFinish = <span class="java-keywords">false</span>;
+   
+   <span class="java-keywords">public</span> <span class="java-layer-method">Consumidor</span>(LimitedLineBuffer b) {
+      meuBuffer = b;
+   }
+
+   <span class="java-keywords">public</span> <span class="java-keywords">void</span> <span class="java-layer-method">stopRunning</span>() {
+      mustFinish = <span class="java-keywords">true</span>;
+   }
+   
+   <span class="java-keywords">public</span> <span class="java-keywords">void</span> <span class="java-layer-method">run</span>() {
+      String novaLinha = <span class="java-keywords">new</span> <span class="java-layer-method">String</span>();
+      <span class="java-keywords">while</span>(!mustFinish  &amp;&amp; !<span class="java-layer-method">isInterrupted</span>()) {
+         novaLinha = meuBuffer.<span class="java-layer-method">get</span>();
+         <span class="java-keywords">if</span> (!mustFinish)
+            System.out.<span class="java-layer-method">println</span>(novaLinha);
+      }
+      <span class="java-keywords">return</span>;
+   }
+}
+
+</pre></body>
+</html>

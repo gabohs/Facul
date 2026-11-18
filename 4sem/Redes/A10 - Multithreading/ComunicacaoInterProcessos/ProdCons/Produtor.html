@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Produtor.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.java-string-literal {color: #99006b}
+.java-layer-method {font-family: Monospaced; font-weight: bold}
+.java-keywords {color: #000099; font-family: Monospaced; font-weight: bold}
+.java-numeric-literals {color: #780000}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\Documents and Settings\adario\Meus documentos\URI\Graduacao\35336_SO1\Extras\ProdCons\src\Produtor.java</td></tr></table>
+<pre>
+<span class="java-keywords">import</span> java.io.*;
+
+<span class="java-keywords">public</span> <span class="java-keywords">class</span> Produtor <span class="java-keywords">extends</span> Thread {
+   LimitedLineBuffer meuBuffer;
+   <span class="java-keywords">private</span> <span class="java-keywords">boolean</span> mustFinish = <span class="java-keywords">false</span>;
+   
+   <span class="java-keywords">public</span> <span class="java-layer-method">Produtor</span>(LimitedLineBuffer b) {
+      meuBuffer = b;
+   }
+
+   <span class="java-keywords">public</span> <span class="java-keywords">void</span> <span class="java-layer-method">stopRunning</span>() {
+      mustFinish = <span class="java-keywords">true</span>;
+   }
+   
+   <span class="java-keywords">public</span> <span class="java-keywords">void</span> <span class="java-layer-method">run</span>() {
+      <span class="java-keywords">int</span> i = <span class="java-numeric-literals">0</span>;
+      <span class="java-keywords">while</span>(!mustFinish &amp;&amp; !<span class="java-layer-method">isInterrupted</span>())
+         meuBuffer.<span class="java-layer-method">put</span>(<span class="java-string-literal">&quot;Linha &quot;</span> + i++);
+      <span class="java-keywords">return</span>;
+   }
+   
+}
+
+
+</pre></body>
+</html>
